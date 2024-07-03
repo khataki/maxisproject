@@ -1,0 +1,171 @@
+/* общие настройки и новостная строка */
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*Убрать полосу прокрутки у элемента*/
+.shopping_cards-slider::-webkit-scrollbar {
+  width: 0;
+}
+
+/*Убрать полосу прокрутки для всей страницы*/
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+#body {
+
+}
+
+.search-container-mobile {
+    display: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* Стили для бегущей строки */
+.newsletter {
+  position: inherit;
+  top: 0;
+  width: 100vw;
+  background-color: #5b0f67;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  padding: 5px 0;
+  z-index: 3;
+}
+
+.newsletter p {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+#message {
+  color: white;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+/* Стили для формы */
+.form-container {
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation button,
+.category-slider button {
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+    user-select: none;
+    transition: 0.3s ease;
+    opacity: 0.5;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    width: 24px;  /* Задайте нужную ширину по умолчанию */
+    height: 24px; /* Задайте нужную высоту по умолчанию */
+    background-color: transparent;
+  }
+  
+  .arrow svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+  
+  /* Объединяем общие стили для .arrow.prev и .arrow.cardslide-prev */
+  .arrow.prev,
+  .arrow.cardslide-prev {
+    background-image: url('/svg/leftarrow.svg');
+  }
+  
+  /* Объединяем общие стили для .arrow.next и .arrow.cardslide-next */
+  .arrow.next,
+  .arrow.cardslide-next {
+    background-image: url('/svg/rightarrow.svg');
+    
+  }
+  
+  /* Специфические размеры для карточных слайдов */
+  .arrow.cardslide-prev,
+  .arrow.cardslide-next {
+    width: 60px;  /* Задайте нужную ширину для карточных слайдов */
+    height: 75px; /* Задайте нужную высоту для карточных слайдов */
+  }
+
+  .arrow.cardslide-prev:hover,
+  .arrow.cardslide-next:hover {
+    opacity: 1;
+  }
+
+  .arrow.cardslide-prev:active,
+  .arrow.cardslide-next:active {
+    scale: 0.9;
+    transform-origin: 0%;
+  }
+  
+
+  .prev:hover,
+  .next:hover {
+    opacity: 1;
+    scale: 1.1;
+  }
+
+  .prev:active,
+  .next:active {
+    scale: 0.9;
+    transform-origin: 0%;
+  }

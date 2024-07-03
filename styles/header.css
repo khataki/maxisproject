@@ -1,0 +1,124 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    max-width: 1440px;
+  }
+  
+  .header__container {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    gap: 50px;
+    position: relative;
+    z-index: 4;
+  }
+
+  .header__logo-container {
+  width: 383px;
+  height: 109px;
+  background: url(/svg/logo.svg) no-repeat;
+  flex-wrap: nowrap;
+  }
+  
+  .header__description {
+    font-weight: 700;
+    font-size: clamp(16px, calc(1rem + ((1vw - 7.44px) * 0.5747)), 20px);
+    min-height: 0vw;
+  }
+  
+  .header__logo-description {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+  }
+  .header__phone-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .feedback__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: 5px;
+  }
+  
+  #feedbackForm {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      gap: 15px;
+  }
+  
+  .feedback__input {
+      width: 80%;
+      font-size: 24px;
+      border: none;
+      border-radius: 15px;
+      padding: 10px;
+  }
+  .header__phone {
+    font-weight: 300;
+    text-decoration: none;
+    color: #747474;
+    font-size: 16px;
+    min-height: 0vw;
+  }
+  
+  .button__purple {
+    background-color: #5b0f67;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 62.5px;
+    border: none;
+    height: 64px;
+    font-weight: 300;
+    font-size: 21px;
+    min-height: 0vw;
+    cursor: pointer;
+  }
+  
+  .header__login-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login__button,
+  .cart__button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .login__description,
+  .cart__description {
+      font-size: clamp(4px, calc(0.25rem + ((1vw - 4.28px) * 0.5929)), 10px);
+    min-height: 0vw;
+    font-weight: 500;
+    color: #747474;
+  }
+  .header__button-container {
+    display: flex;
+    position: relative;
+    left: 10px;
+  }
+  .icon-header:hover path {
+    stroke: #5b0f67;
+  }
+  
+  .icon-header:active {
+    scale: 0.9;
+  }
+  
+  .button__purple:hover {
+    background-color: #480c51;
+  }
+  
+  .button__purple:active {
+    background-color: #3d0a45;
+    scale: 0.95;
+  }
+  

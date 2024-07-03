@@ -1,0 +1,11 @@
+.user_interface-item.active svg path {
+    fill: #5b0f67;
+}
+
+.cart__button.active svg path {
+    stroke: #5b0f67;
+}
+
+.user_interface-mobile {
+    display: none;
+}

@@ -1,0 +1,51 @@
+.hidden {
+    display: none;
+}
+.log-mobile {
+    box-shadow: none;
+}
+
+.modal-content {
+    box-shadow: none;
+    margin: 25% auto;
+    width: 90%;
+}
+
+.catalog-mobile-data {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.catalog-mobile-data h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.catalog-mobile-data ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.catalog-mobile-data ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.catalog-mobile-data ul li.active {
+    color: #6200ea;
+    font-weight: bold;
+}
+
+a {
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+}
+
+a.active {
+    color: #6200ea;
+    font-weight: bold;
+}

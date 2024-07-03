@@ -1,0 +1,110 @@
+.shopping_cards-container {
+    background-color: #fff;
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .new-title {
+    margin-bottom: 0;
+  }
+  .categories-title_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  
+  .shopping_cards-slider {
+    width: 95%;
+    display: flex;
+    position: relative;
+  }
+  
+  .cardslide-prev {
+      left: -45px;
+  }
+  
+  
+  .cardslide-next {
+      right: -45px;
+  }
+  
+  
+  .shopping_card-list {
+    display: flex;
+    gap: 40px;
+    overflow-x: scroll;
+    width: 90%;
+  }
+  
+  .line {
+    display: flex;
+    flex: 1;
+    width: 30vw;
+    height: 3px;
+    background-color: #d3d3d3; /* светло-серый цвет */
+    margin: 0 20px; /* отступы между линией и заголовком */
+  }
+  
+.shopping_card-item {
+    position: relative;
+  }
+
+  .shopping_card-image {
+    width: 262px; /* Установите нужную ширину */
+    height: 448px; /* Установите нужную высоту */
+    position: relative;
+    overflow: hidden;
+  }
+
+.card_image {
+  border-radius: 15px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.shopping_card-info {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fast_view-button {
+  font-weight: 200;
+  font-size: 18px;
+  color: #b0b0b0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.fast_view-button:hover {
+  color: #5b0f67;
+}
+
+.fast_view-button:active {
+  scale: 0.9;
+}
+
+.shopping_card-description,
+.card-price {
+  font-weight: 200;
+  font-size: clamp(14px, calc(0.875rem + ((1vw - 4.28px) * 0.9881)), 24px);
+  min-height: 0vw;
+  text-decoration: none;
+  color: black;
+
+}
+
+.shopping_card-image:hover .card_image {
+    transform: scale(1.2); /* Увеличение изображения при наведении */
+  }
+

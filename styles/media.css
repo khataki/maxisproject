@@ -1,0 +1,260 @@
+/* МЕДИА ЗАПРОСЫ/БРЕИКПОИНТЫ */
+
+/* ПЛАНШЕТЫ/СТАРЫЕ НОУТЫ */
+@media screen and (max-width: 1024px) {
+    .header__description {
+        display: none;
+    }
+
+    .footer__list {
+        display: block;
+    }
+
+    .nav-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+       
+    }
+
+    .cards__container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* МОБИЛКА */
+
+@media screen and (max-width: 768px) {
+  .newsletter, .header__description, .arrow, .fast_view-button, .footer__list, .logo-feedback, .controls, .mobile-hidden {
+    display: none;
+  }
+
+  .button__purple {
+    min-width: 200px;
+  }
+
+  .header {
+    margin-bottom: 30px;
+    padding: 5px;
+  }
+
+  .search-container-mobile {
+    background-color: #821093;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    display: flex;
+    padding: 13px;
+    width: 100%;
+  }
+
+.footer_container {
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+}
+
+.header__logo-container {
+  height: 100px;
+  width: 310px;
+  background-size: contain;
+}
+
+  .input-container {
+    margin: 0;
+    display: flex;
+    background-color: #fff;
+    border-radius: 15px ;
+    width: 100%;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  .mobile-search {
+    display: flex;
+    margin: 0;
+    width: 100%;
+    padding: 5px;
+  }
+
+  .search  {
+    width: 100%;
+    border-radius: 15px;
+    background-color: #fff;
+  }
+
+  .search-container.icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .user-dashboard {
+    flex-direction: column;
+    padding: 5px;
+    gap: 20px;
+  }
+
+  .profile-section, .orders-section, .user__info {
+    margin: 0;
+    width: 100%;
+  }
+
+  .profile-section {
+    border-bottom: #D9D9D9 2px solid;
+  }
+
+
+  .shopping_card-image {
+    width: 179px; /* Установите нужную ширину */
+    height: 355px; /* Установите нужную высоту */
+  }
+
+  .footer-feedback__container, .footer__phone-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer__phone-container {
+    gap: 5px;
+    font-size: 28px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .advantages__container {
+    grid-template-columns: 1fr;
+  }
+
+  .user_interface-mobile {
+    display: flex;
+    width: 100%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    position: fixed;
+    z-index: 2;
+    background-color: white;
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+    
+  }
+
+  .user__interface-mobile_fix {
+    display: flex;
+    height: 100vh;
+  }
+
+  .user_interface-mobile__container {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .main-nav, .feedback__container, .header__phone-container, .header__button-container {
+    display: none;
+  }
+
+
+
+
+  .cards__container {
+    display: grid;
+    margin: 0;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 100px;
+  }
+
+  .categories {
+    width: 60vw;
+    overflow: scroll;
+  }
+
+  .categories__title {
+    margin: 0;
+  }
+
+  .categories_container {
+    margin-bottom: 25px;
+  }
+
+  .card-table-container {
+    flex-direction: column;
+  }
+
+  .main-container, .product-images {
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+  }
+
+  .product-card {
+    width: 100%;
+  }
+
+
+
+  .main-images {
+    display: flex;
+    overflow: scroll;
+    width: 100%;
+  }
+
+  .main-images .main-img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .thumbnail-images {
+    flex-direction: row;
+    overflow: scroll;
+    width: 80%;
+  }
+
+  .tab-container {
+    width: 100%;
+  }
+
+  .tab-header {
+    flex-direction: column;
+  }
+
+  .info-section {
+    width: 100%;
+    margin: 0;
+    background-color: #fff;
+  }
+
+  .product-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .product-info {
+text-align: center;
+  }
+
+  .characteristics {
+    width: 90%;
+  }
+
+.shopping_cards-container {
+  padding: 0;
+  margin-bottom: 25px;
+}
+  .info-section {
+    border-radius: 0;
+    margin-top: 20px;
+  }
+}
+
