@@ -1,5 +1,4 @@
 import { productInfo } from './productInfo.js';
-import { items } from './productItemComponent.js';
 
 export function createShoppingCard(item, index) {
     return `

@@ -26,7 +26,8 @@
     align-items: center;
     padding: 10px 20px;
     background-color: #fff;
-    margin-bottom: 20px;
+    margin: 0 0 20px 0;
+    width: 100%;
   }
 
   .view-icons {
