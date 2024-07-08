@@ -38,155 +38,155 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // МОДАЛЬНОЕ ОКНО ЛОГИНА
 
-document.addEventListener('DOMContentLoaded', initializeLoginModals);
+// document.addEventListener('DOMContentLoaded', initializeLoginModals);
 
-function initializeLoginModals() {
-    const modals = {
-        loginModal: document.getElementById('loginModal'),
-        registerModal: document.getElementById('registerModal'),
-        forgotPasswordModal: document.getElementById('forgotPasswordModal')
-    };
+// function initializeLoginModals() {
+//     const modals = {
+//         loginModal: document.getElementById('loginModal'),
+//         registerModal: document.getElementById('registerModal'),
+//         forgotPasswordModal: document.getElementById('forgotPasswordModal')
+//     };
 
-    const buttons = {
-        loginButton: document.getElementById('loginButton'),
-        registerModalButton: document.getElementById('registerModalButton'),
-        forgotPasswordModalButton: document.getElementById('forgotPasswordModalButton'),
-        loginButtonBack: document.getElementById('loginButtonBack'),
-        loginButtonBackSecond: document.getElementById('loginButtonBackSecond'),
-        footerLoginLink: document.getElementById('link-login'),
-        footerRegisterLink: document.getElementById('link-register')
-    };
+//     const buttons = {
+//         loginButton: document.getElementById('loginButton'),
+//         registerModalButton: document.getElementById('registerModalButton'),
+//         forgotPasswordModalButton: document.getElementById('forgotPasswordModalButton'),
+//         loginButtonBack: document.getElementById('loginButtonBack'),
+//         loginButtonBackSecond: document.getElementById('loginButtonBackSecond'),
+//         footerLoginLink: document.getElementById('link-login'),
+//         footerRegisterLink: document.getElementById('link-register')
+//     };
 
-    checkElementsExistence(modals, "modal");
-    checkElementsExistence(buttons, "button");
+//     checkElementsExistence(modals, "modal");
+//     checkElementsExistence(buttons, "button");
 
-    function checkElementsExistence(elements, type) {
-        for (const key in elements) {
-            if (!elements[key]) {
-                console.error(`Element with ID ${key} is missing.`);
-            } else {
-                console.log(`Element with ID ${key} found.`);
-            }
-        }
-    }
+//     function checkElementsExistence(elements, type) {
+//         for (const key in elements) {
+//             if (!elements[key]) {
+//                 console.error(`Element with ID ${key} is missing.`);
+//             } else {
+//                 console.log(`Element with ID ${key} found.`);
+//             }
+//         }
+//     }
 
-    function openModal(modalId) {
-        for (const key in modals) {
-            if (key === modalId) {
-                modals[key].classList.add('show');
-                console.log(`Modal ${key} opened.`);
-            } else {
-                modals[key].classList.remove('show');
-            }
-        }
-        document.body.classList.add('no-scroll');
-    }
+//     function openModal(modalId) {
+//         for (const key in modals) {
+//             if (key === modalId) {
+//                 modals[key].classList.add('show');
+//                 console.log(`Modal ${key} opened.`);
+//             } else {
+//                 modals[key].classList.remove('show');
+//             }
+//         }
+//         document.body.classList.add('no-scroll');
+//     }
 
-    function closeModal(modalId) {
-        const modal = modals[modalId];
-        if (modal) {
-            modal.classList.remove('show');
-            console.log(`Modal ${modalId} closed.`);
-        }
-        document.body.classList.remove('no-scroll');
-    }
+//     function closeModal(modalId) {
+//         const modal = modals[modalId];
+//         if (modal) {
+//             modal.classList.remove('show');
+//             console.log(`Modal ${modalId} closed.`);
+//         }
+//         document.body.classList.remove('no-scroll');
+//     }
 
-    function addClickEvent(element, handler) {
-        if (element) {
-            element.addEventListener('click', handler);
-        } else {
-            console.error(`${element.id} element not found`);
-        }
-    }
+//     function addClickEvent(element, handler) {
+//         if (element) {
+//             element.addEventListener('click', handler);
+//         } else {
+//             console.error(`${element.id} element not found`);
+//         }
+//     }
 
-    addClickEvent(buttons.loginButton, (e) => {
-        e.preventDefault();
-        openModal('loginModal');
-    });
+//     addClickEvent(buttons.loginButton, (e) => {
+//         e.preventDefault();
+//         openModal('loginModal');
+//     });
 
-    addClickEvent(buttons.registerModalButton, (e) => {
-        e.preventDefault();
-        openModal('registerModal');
-    });
+//     addClickEvent(buttons.registerModalButton, (e) => {
+//         e.preventDefault();
+//         openModal('registerModal');
+//     });
 
-    addClickEvent(buttons.forgotPasswordModalButton, (e) => {
-        e.preventDefault();
-        openModal('forgotPasswordModal');
-    });
+//     addClickEvent(buttons.forgotPasswordModalButton, (e) => {
+//         e.preventDefault();
+//         openModal('forgotPasswordModal');
+//     });
 
-    const backButtonsHandler = (e) => {
-        e.preventDefault();
-        closeModal('registerModal');
-        closeModal('forgotPasswordModal');
-        openModal('loginModal');
-    };
+//     const backButtonsHandler = (e) => {
+//         e.preventDefault();
+//         closeModal('registerModal');
+//         closeModal('forgotPasswordModal');
+//         openModal('loginModal');
+//     };
 
-    addClickEvent(buttons.loginButtonBack, backButtonsHandler);
-    addClickEvent(buttons.loginButtonBackSecond, backButtonsHandler);
+//     addClickEvent(buttons.loginButtonBack, backButtonsHandler);
+//     addClickEvent(buttons.loginButtonBackSecond, backButtonsHandler);
 
-    // Add click events for footer links
-    addClickEvent(buttons.footerLoginLink, (e) => {
-        e.preventDefault();
-        openModal('loginModal');
-    });
+//     // Add click events for footer links
+//     addClickEvent(buttons.footerLoginLink, (e) => {
+//         e.preventDefault();
+//         openModal('loginModal');
+//     });
 
-    addClickEvent(buttons.footerRegisterLink, (e) => {
-        e.preventDefault();
-        openModal('registerModal');
-    });
+//     addClickEvent(buttons.footerRegisterLink, (e) => {
+//         e.preventDefault();
+//         openModal('registerModal');
+//     });
 
-    window.onclick = function(event) {
-        for (const key in modals) {
-            if (event.target === modals[key]) {
-                closeModal(key);
-            }
-        }
-    };
-}
+//     window.onclick = function(event) {
+//         for (const key in modals) {
+//             if (event.target === modals[key]) {
+//                 closeModal(key);
+//             }
+//         }
+//     };
+// }
 
 
-// Обратная связь
-function initializeFeedbackModal() {
-    const feedbackModal = document.getElementById('feedbackModal');
-    const feedbackForm = document.getElementById('feedbackForm');
+// // Обратная связь
+// function initializeFeedbackModal() {
+//     const feedbackModal = document.getElementById('feedbackModal');
+//     const feedbackForm = document.getElementById('feedbackForm');
 
     
 
-    // Функция для открытия модального окна
-    function openFeedbackModal() {
-        feedbackModal.style.opacity = '1';
-        feedbackModal.style.visibility = 'visible';
+//     // Функция для открытия модального окна
+//     function openFeedbackModal() {
+//         feedbackModal.style.opacity = '1';
+//         feedbackModal.style.visibility = 'visible';
 
-    }
+//     }
 
-    // Функция для закрытия модального окна
-    function closeFeedbackModal() {
-        feedbackModal.style.opacity = '0';
-        feedbackModal.style.visibility = 'hidden';
-    }
+//     // Функция для закрытия модального окна
+//     function closeFeedbackModal() {
+//         feedbackModal.style.opacity = '0';
+//         feedbackModal.style.visibility = 'hidden';
+//     }
 
-    // Пример кнопки, которая открывает модальное окно
-    document.getElementById('openFeedbackModalButton').addEventListener('click', openFeedbackModal);
+//     // Пример кнопки, которая открывает модальное окно
+//     document.getElementById('openFeedbackModalButton').addEventListener('click', openFeedbackModal);
 
-    // Закрытие модального окна при отправке формы
-    feedbackForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        // Здесь можно добавить код для отправки данных формы на сервер
-        closeFeedbackModal();
-    });
+//     // Закрытие модального окна при отправке формы
+//     feedbackForm.addEventListener('submit', function(event) {
+//         event.preventDefault();
+//         // Здесь можно добавить код для отправки данных формы на сервер
+//         closeFeedbackModal();
+//     });
 
-    // Закрытие модального окна при клике вне его области
-    window.addEventListener('click', function(event) {
-        if (event.target === feedbackModal) {
-            closeFeedbackModal();
-        }
-    });
+//     // Закрытие модального окна при клике вне его области
+//     window.addEventListener('click', function(event) {
+//         if (event.target === feedbackModal) {
+//             closeFeedbackModal();
+//         }
+//     });
     
 
-    console.log('feedBackModal initialized')
-};
+//     console.log('feedBackModal initialized')
+// };
 
-document.addEventListener('DOMContentLoaded', initializeFeedbackModal);
+// document.addEventListener('DOMContentLoaded', initializeFeedbackModal);
 
 
 
@@ -371,110 +371,110 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    const quantityElements = document.querySelectorAll('.quantity-value');
-    const priceElements = document.querySelectorAll('.product-grid-item.price');
-    const summaryQuantityElement = document.querySelector('.summary-quantity');
-    const summaryPriceElement = document.querySelector('.summary-price');
-    const pricePerItem = 1500; // Цена за единицу товара
+// document.addEventListener('DOMContentLoaded', () => {
+//     const quantityElements = document.querySelectorAll('.quantity-value');
+//     const priceElements = document.querySelectorAll('.product-grid-item.price');
+//     const summaryQuantityElement = document.querySelector('.summary-quantity');
+//     const summaryPriceElement = document.querySelector('.summary-price');
+//     const pricePerItem = 1500; // Цена за единицу товара
 
-    function updateSummary() {
-        let totalQuantity = 0;
-        let totalPrice = 0;
+//     function updateSummary() {
+//         let totalQuantity = 0;
+//         let totalPrice = 0;
 
-        quantityElements.forEach((element, index) => {
-            const quantity = parseInt(element.textContent);
-            totalQuantity += quantity;
-            totalPrice += quantity * pricePerItem;
-        });
+//         quantityElements.forEach((element, index) => {
+//             const quantity = parseInt(element.textContent);
+//             totalQuantity += quantity;
+//             totalPrice += quantity * pricePerItem;
+//         });
 
-        summaryQuantityElement.textContent = `${totalQuantity} шт.`;
-        summaryPriceElement.textContent = `${totalPrice}Р.`;
-    }
+//         summaryQuantityElement.textContent = `${totalQuantity} шт.`;
+//         summaryPriceElement.textContent = `${totalPrice}Р.`;
+//     }
 
-    document.querySelectorAll('.quantity .decrement').forEach((button, index) => {
-        button.addEventListener('click', () => {
-            const parent = button.closest('.product-grid-item.quantity');
-            if (!parent.classList.contains('unavailable')) {
-                let quantity = parseInt(quantityElements[index].textContent);
-                if (quantity > 0) {
-                    quantity--;
-                    quantityElements[index].textContent = quantity;
-                    updateSummary();
-                }
-            }
-        });
-    });
+//     document.querySelectorAll('.quantity .decrement').forEach((button, index) => {
+//         button.addEventListener('click', () => {
+//             const parent = button.closest('.product-grid-item.quantity');
+//             if (!parent.classList.contains('unavailable')) {
+//                 let quantity = parseInt(quantityElements[index].textContent);
+//                 if (quantity > 0) {
+//                     quantity--;
+//                     quantityElements[index].textContent = quantity;
+//                     updateSummary();
+//                 }
+//             }
+//         });
+//     });
 
-    document.querySelectorAll('.quantity .increment').forEach((button, index) => {
-        button.addEventListener('click', () => {
-            const parent = button.closest('.product-grid-item.quantity');
-            if (!parent.classList.contains('unavailable')) {
-                let quantity = parseInt(quantityElements[index].textContent);
-                quantity++;
-                quantityElements[index].textContent = quantity;
-                updateSummary();
-            }
-        });
-    });
+//     document.querySelectorAll('.quantity .increment').forEach((button, index) => {
+//         button.addEventListener('click', () => {
+//             const parent = button.closest('.product-grid-item.quantity');
+//             if (!parent.classList.contains('unavailable')) {
+//                 let quantity = parseInt(quantityElements[index].textContent);
+//                 quantity++;
+//                 quantityElements[index].textContent = quantity;
+//                 updateSummary();
+//             }
+//         });
+//     });
 
-    // Инициализация
-    updateSummary();
-});
+//     // Инициализация
+//     updateSummary();
+// });
 
 
-    document.addEventListener('DOMContentLoaded', function() {
-        const tabs = document.querySelectorAll('.tab-item');
-        const panes = document.querySelectorAll('.tab-pane');
+//     document.addEventListener('DOMContentLoaded', function() {
+//         const tabs = document.querySelectorAll('.tab-item');
+//         const panes = document.querySelectorAll('.tab-pane');
 
-        tabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-                const target = this.getAttribute('data-tab');
+//         tabs.forEach(tab => {
+//             tab.addEventListener('click', function() {
+//                 const target = this.getAttribute('data-tab');
 
-                tabs.forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
+//                 tabs.forEach(t => t.classList.remove('active'));
+//                 this.classList.add('active');
 
-                panes.forEach(pane => {
-                    if (pane.id === target) {
-                        pane.classList.add('active');
-                    } else {
-                        pane.classList.remove('active');
-                    }
-                });
-            });
-        });
-    });
+//                 panes.forEach(pane => {
+//                     if (pane.id === target) {
+//                         pane.classList.add('active');
+//                     } else {
+//                         pane.classList.remove('active');
+//                     }
+//                 });
+//             });
+//         });
+//     });
 
-    document.addEventListener('DOMContentLoaded', function() {
-        const headers = document.querySelectorAll('.info-header');
+//     document.addEventListener('DOMContentLoaded', function() {
+//         const headers = document.querySelectorAll('.info-header');
     
-        headers.forEach(header => {
-            header.addEventListener('click', function() {
-                const targetId = this.getAttribute('data-target');
-                const content = document.getElementById(targetId);
+//         headers.forEach(header => {
+//             header.addEventListener('click', function() {
+//                 const targetId = this.getAttribute('data-target');
+//                 const content = document.getElementById(targetId);
     
-                if (content.style.display === 'none' || content.style.display === '') {
-                    content.style.display = 'block';
-                } else {
-                    content.style.display = 'none';
-                }
-            });
-        });
+//                 if (content.style.display === 'none' || content.style.display === '') {
+//                     content.style.display = 'block';
+//                 } else {
+//                     content.style.display = 'none';
+//                 }
+//             });
+//         });
 
-    });
+//     });
 
     
-// AJAX
+// // AJAX
 
-document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('.ajax-link').forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            const url = this.getAttribute('href');
-            makeFetchRequest(url, 'GET');
-        });
-    });
-});
+// document.addEventListener("DOMContentLoaded", function() {
+//     document.querySelectorAll('.ajax-link').forEach(link => {
+//         link.addEventListener('click', function(event) {
+//             event.preventDefault();
+//             const url = this.getAttribute('href');
+//             makeFetchRequest(url, 'GET');
+//         });
+//     });
+// });
 
 function makeFetchRequest(url, method) {
     fetch(url, {

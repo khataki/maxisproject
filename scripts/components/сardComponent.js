@@ -1,4 +1,3 @@
-// cardComponent.js
 import { productInfo } from './productInfo.js';
 import { items } from './productItemComponent.js';
 
@@ -27,15 +26,7 @@ export function createShoppingCard(item, index) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const shoppingCardContainer = document.getElementById('shoppingCardContainer');
 
-    if (!shoppingCardContainer) {
-        console.error('Element with ID "shoppingCardContainer" not found');
-        return;
-    }
-
-    // Создаем карточки для всех элементов items
-    shoppingCardContainer.innerHTML = items.map((item, index) => createShoppingCard(item, index)).join('');
 
     // Добавляем обработчики событий для изменения изображения при наведении
     const cardImages = document.querySelectorAll('.card_image');

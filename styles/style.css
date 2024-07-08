@@ -23,10 +23,6 @@ html {
   height: 0;
 }
 
-#body {
-
-}
-
 .search-container-mobile {
     display: none;
 }
@@ -54,7 +50,6 @@ html {
   overflow: hidden;
   white-space: nowrap;
   box-sizing: border-box;
-  padding: 5px 0;
   z-index: 3;
 }
 

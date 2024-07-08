@@ -9,7 +9,7 @@
     overflow-y: visible;
     background-color: white;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-    z-index: 3;
+    z-index: 4;
     transform: translateX(100%);
     transition: 0.3s; 
     border-radius: 15px;

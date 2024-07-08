@@ -4,13 +4,13 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
-position: relative;
-    background-color: white;
+position: sticky;
+    background-color: #821093;
+    color: white;
 z-index: 3;
     transition: 0.3s;
-    padding: 10px;
+    padding: 5px 0 5px 0;
   }
   
   .nav-list {
@@ -22,6 +22,7 @@ z-index: 3;
     padding: 0;
     font-weight: 600;
     align-items: center;
+    color: white;
   }
   
   .search {
@@ -36,11 +37,11 @@ z-index: 3;
 
   .search:focus {
     outline: none;
-    width: 100vw;
+width: 120%;
   }
   .search:focus  {
     outline: none;
-    width: 100vw;
+width: 120%;
   }
   .icon {
     width: 30px;
@@ -60,7 +61,7 @@ z-index: 3;
   .nav-list__link {
       text-wrap: nowrap;
       text-decoration: none;
-      color: #1c1c1c;
+      color: white;
       font-size: clamp(14px, calc(0.875rem + ((1vw - 4.28px) * 0.9881)), 24px);
       min-height: 0vw;
       font-weight: 500;
@@ -126,12 +127,14 @@ z-index: 3;
       border: none;
       border-radius: 5px;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      z-index: 4;
+      z-index: 5;
       transition: max-height 0.3s ease, opacity 0.3s ease;
       overflow: visible;
       max-height: 0;
       opacity: 0;
       visibility: hidden;
+      padding: 0;
+      display: flex;
   }
   
   .catalog-container:hover .categories-list {
@@ -142,13 +145,17 @@ z-index: 3;
   
   .categories-list ul {
       list-style: none;
-      padding: 10px;
       margin: 0;
-  }
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }
   
   .categories-list li {
-      padding: 4px 8px;
       cursor: pointer;
+      margin: 0;
+      padding: 5px;
       transition: background-color 0.3s;
   }
   
