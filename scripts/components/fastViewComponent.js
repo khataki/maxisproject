@@ -42,11 +42,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="summary">
                                 <div class="summary-item">
                                     <span class="summary-label">Кол-во:</span>
-                                    <span class="summary-quantity">1 шт.</span>
+                                    <span class="summary-quantity">0 шт.</span>
                                 </div>
                                 <div class="summary-item">
                                     <span class="summary-label">Итог:</span>
-                                    <span class="summary-price">1500Р.</span>
+                                    <span class="summary-price">0Р.</span>
                                 </div>
                             </div>
                             <div class="add-to-cart">

@@ -14,7 +14,7 @@ export function createHeader() {
       <button id="openFeedbackModalButton" class="button__purple">
         Обратная связь
       </button>
-      <div class="header__phone-container">
+      <div class="header__phone-container hidden">
         <a class="header__phone" href="tel:+79061117455">+7(906)111-74-55</a>
         <a class="header__phone" href="tel:+79030620500">+7(903)062-05-00</a>
       </div>
@@ -41,6 +41,20 @@ export function createHeader() {
 
   // Инициализация кнопки корзины и ее функциональности
   initCart(header);
+
+  // Добавляем обработчики событий для показа номеров телефонов
+  const feedbackButton = header.querySelector('#openFeedbackModalButton');
+  const phoneContainer = header.querySelector('.header__phone-container');
+
+  feedbackButton.addEventListener('mouseenter', () => {
+    phoneContainer.classList.remove('hidden');
+    phoneContainer.classList.add('visible');
+  });
+
+  feedbackButton.addEventListener('mouseleave', () => {
+    phoneContainer.classList.remove('visible');
+    phoneContainer.classList.add('hidden');
+  });
 
   return header;
 }

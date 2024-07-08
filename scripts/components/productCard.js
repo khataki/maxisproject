@@ -1,5 +1,6 @@
 import { createTabs, attachTabsEventListeners } from './tabsComponent.js';
 import { createCharacteristicsTable } from './characteristicsComponent.js';
+import { createProductGrid } from './productGridComponent.js';
 import { productInfo } from './productInfo.js';
 import { items } from './productItemComponent.js';
 
@@ -15,8 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeModalButton = document.querySelector('.close-modal');
     const prevButton = document.querySelector('.prev');
     const nextButton = document.querySelector('.next');
+    const productGridContainer = document.getElementById('productGridContainer');
+    const addToCartButton = document.querySelector('.add-to-cart-button');
+    const summaryQuantityElement = document.querySelector('.summary-quantity');
+    const summaryPriceElement = document.querySelector('.summary-price');
 
-    if (!productTitle || !productCode || !tabsContainer || !characteristicsContainer || !productImagesContainer || !thumbnailImagesContainer || !modalImage || !imageModal || !closeModalButton || !prevButton || !nextButton) {
+    if (!productTitle || !productCode || !tabsContainer || !characteristicsContainer || !productImagesContainer || !thumbnailImagesContainer || !modalImage || !imageModal || !closeModalButton || !prevButton || !nextButton || !productGridContainer || !addToCartButton || !summaryQuantityElement || !summaryPriceElement) {
         console.error('Не удалось найти один из элементов на странице');
         return;
     }
@@ -93,4 +98,102 @@ document.addEventListener('DOMContentLoaded', function() {
             imageModal.classList.remove('open');
         }
     });
+
+    // Функция для удаления обработчиков событий
+    function removeEventListeners(selectors, event, handler) {
+        document.querySelectorAll(selectors).forEach(element => {
+            element.removeEventListener(event, handler);
+        });
+    }
+
+    // Рендерим сетку товаров
+    function renderProductGrid() {
+        productGridContainer.innerHTML = createProductGrid(items);
+        attachGridEventListeners();
+        updateSummary();
+    }
+
+    function attachGridEventListeners() {
+        const decrementButtons = document.querySelectorAll('.quantity .decrement');
+        const incrementButtons = document.querySelectorAll('.quantity .increment');
+        const decrementColorButtons = document.querySelectorAll('.color .decrement-color');
+        const incrementColorButtons = document.querySelectorAll('.color .increment-color');
+
+        // Удаляем предыдущие обработчики событий
+        removeEventListeners('.quantity .decrement', 'click', handleDecrementClick);
+        removeEventListeners('.quantity .increment', 'click', handleIncrementClick);
+        removeEventListeners('.color .decrement-color', 'click', handleDecrementColorClick);
+        removeEventListeners('.color .increment-color', 'click', handleIncrementColorClick);
+
+        // Добавляем новые обработчики событий
+        decrementButtons.forEach(button => {
+            button.addEventListener('click', handleDecrementClick);
+        });
+
+        incrementButtons.forEach(button => {
+            button.addEventListener('click', handleIncrementClick);
+        });
+
+        decrementColorButtons.forEach(button => {
+            button.addEventListener('click', handleDecrementColorClick);
+        });
+
+        incrementColorButtons.forEach(button => {
+            button.addEventListener('click', handleIncrementColorClick);
+        });
+    }
+
+    function handleDecrementClick(event) {
+        const index = parseInt(event.target.getAttribute('data-index'), 10);
+        if (items[index].quantity > 0) {
+            items[index].quantity--;
+        }
+        renderProductGrid();
+    }
+
+    function handleIncrementClick(event) {
+        const index = parseInt(event.target.getAttribute('data-index'), 10);
+        items[index].quantity++;
+        renderProductGrid();
+    }
+
+    function handleDecrementColorClick(event) {
+        const index = parseInt(event.target.getAttribute('data-index'), 10);
+        const item = items[index];
+        const currentColorIndex = item.colors.indexOf(event.target.closest('.color-value').textContent);
+        const newColorIndex = (currentColorIndex === 0) ? item.colors.length - 1 : currentColorIndex - 1;
+        event.target.closest('.color-value').textContent = item.colors[newColorIndex];
+    }
+
+    function handleIncrementColorClick(event) {
+        const index = parseInt(event.target.getAttribute('data-index'), 10);
+        const item = items[index];
+        const currentColorIndex = item.colors.indexOf(event.target.closest('.color-value').textContent);
+        const newColorIndex = (currentColorIndex === item.colors.length - 1) ? 0 : currentColorIndex + 1;
+        event.target.closest('.color-value').textContent = item.colors[newColorIndex];
+    }
+
+    // Обновление итогов корзины
+    function updateSummary() {
+        const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
+        const totalPrice = items.reduce((sum, item) => sum + (item.quantity * item.price), 0);
+
+        summaryQuantityElement.textContent = `${totalQuantity} шт.`;
+        summaryPriceElement.textContent = `${totalPrice}Р.`;
+    }
+
+    // Обработчик для кнопки "Добавить в корзину"
+    addToCartButton.addEventListener('click', function() {
+        items.forEach(item => {
+            if (item.quantity > 0) {
+                const event = new CustomEvent('addToCart', { detail: { item: { ...item, ...productInfo } } });
+                window.dispatchEvent(event);
+                item.quantity = 0;
+            }
+        });
+        updateSummary();
+        renderProductGrid();
+    });
+
+    renderProductGrid();
 });
