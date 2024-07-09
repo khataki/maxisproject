@@ -1,13 +1,13 @@
 export const questions = [
     {
         name: 'Сергей Сидоров',
-        photo: '/images/user3.jpg',
+        photo: '/images/example3.jpeg',
         date: '2024-03-10',
         text: 'Есть ли в наличии размер 50?'
     },
     {
         name: 'Анна Смирнова',
-        photo: '/images/user4.jpg',
+        photo: '/images/example2.jpg',
         date: '2024-04-05',
         text: 'Какой состав ткани?'
     }

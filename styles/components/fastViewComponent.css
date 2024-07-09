@@ -311,3 +311,20 @@
     font-weight: 300;
     margin: 0;
 }
+
+.question-photo {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0
+}
+
+.question-content {
+    margin: 0;
+}
+
+.question {
+    display: flex;
+    gap: 10px;
+}

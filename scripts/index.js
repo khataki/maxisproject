@@ -136,29 +136,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Поисковая строка
-
-
-// UI
-
-document.addEventListener("DOMContentLoaded", function() {
-    const currentUrl = window.location.pathname;
-    const links = {
-        "/": "home-link",
-        "/catalog": "catalog-link",
-        "/cart": "cart-link",
-        "/profile": "profile-link",
-        "/login": "login-link"
-    };
-
-    for (const [path, id] of Object.entries(links)) {
-        if (currentUrl === path) {
-            document.getElementById(id).classList.add("active");
-            break;
-        }
-    }
-});
-
 function initializeArrows() {
     const template = document.getElementById('catalog-template');
     if (!template) {
@@ -214,21 +191,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-function makeFetchRequest(url, method) {
-    fetch(url, {
-        method: method,
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    .then(response => response.text()) // или response.json() для JSON данных
-    .then(data => {
-        document.querySelector('#content').innerHTML = data; // Предполагается, что вы заменяете содержимое элемента с id="content"
-        history.pushState(null, '', url); // Обновление URL в браузере без перезагрузки
-        initializeArrows(); // Вызов функции для инициализации стрелок после загрузки нового контента
-        initializeLoginModals(); // Вызов функции для инициализации модальных окон после загрузки нового контента
-        initializeFeedbackModal(); // Вызов функции для инициализации модального окна обратной связи после загрузки нового контента
-        initializeCartModal(); // Вызов функции для инициализации модального окна корзины после загрузки нового контента
-    })
-    .catch(error => console.error('Error:', error));
-}

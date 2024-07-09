@@ -40,20 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function attachCardEventListeners() {
-  const cardImages = document.querySelectorAll('.card_image');
-  cardImages.forEach(cardImage => {
-    const hoverSrc = cardImage.getAttribute('data-hover-src');
-    const originalSrc = cardImage.src;
-
-    cardImage.addEventListener('mouseover', () => {
-      cardImage.src = hoverSrc;
-    });
-
-    cardImage.addEventListener('mouseout', () => {
-      cardImage.src = originalSrc;
-    });
-  });
-
   const fastViewButtons = document.querySelectorAll('.fast_view-button.fastView');
   fastViewButtons.forEach(button => {
     button.addEventListener('click', function() {

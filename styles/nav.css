@@ -59,11 +59,6 @@ width: 120%;
     background-color: white;
     border-radius: 15px;
   }
-  
-  .hidden {
-    visibility: hidden;
-  }
-  
   .categories-list, .subcategories-list {
     position: relative;
   }
@@ -75,7 +70,7 @@ width: 120%;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 200px;
-    z-index: 1000;
+    z-index: 7;
     border-radius: 5px;
   }
   
@@ -83,19 +78,19 @@ width: 120%;
     list-style: none;
     padding: 0;
     margin: 0;
-    z-index: 1001;
+    z-index: 8;
     color: #1c1c1c;
   }
   
   .subcategories-list ul li {
-    padding: 10px;
-    z-index: 1001;
+    z-index: 9;
     color: #1c1c1c;
   }
   
   .nav-list__link-item {
     position: relative;
     z-index: 6;
+    padding: 5px;
   }
 
   
@@ -110,18 +105,10 @@ width: 120%;
   }
   
   .categories-list__li {
-    padding: 10px;
     position: relative;
   }
   
-  .nav-list__link-item {
-    position: relative;
-    display: block;
-    color: #000; /* Цвет текста для ссылок */
-    text-decoration: none; /* Убирает подчеркивание у ссылок */
-    padding: 10px;
-  }
-  
+
   
   .nav-list__link {
       text-wrap: nowrap;
@@ -197,7 +184,6 @@ width: 120%;
       overflow: visible;
       max-height: 0;
       opacity: 0;
-      visibility: hidden;
       padding: 0;
       display: flex;
   }
@@ -220,26 +206,31 @@ width: 120%;
   .categories-list li {
       cursor: pointer;
       margin: 0;
-      padding: 5px;
       transition: background-color 0.3s;
   }
   
-  .nav-list__link-item {
+  .category-link, .subcategory-link {
       text-decoration: none;
       color: #1c1c1c;
-      font-size: 16px;
       font-weight: 300;
       text-align: start;
       transition: 0.3s;
+      position: relative;
+      display: block;
+      padding: 7px;
   }
   
   .categories-list li:hover {
       background-color: #821093;
   }
   
-  .categories-list li:hover .nav-list__link-item {
+  .categories-list li:hover .category-link {
       color: white;
   }
+
+  .subcategories-list li:hover .subcategory-link {
+    color: white;
+}
 
   
   
