@@ -6,9 +6,13 @@ export function createShoppingCard(item, index) {
             <a class="ajax-link" href="/public/productcard.html">
                 <div class="shopping_card-image">
                     <img
-                        class="card_image"
+                        class="card_image main-image"
                         src="${productInfo.mainImages[0]}"
-                        data-hover-src="${productInfo.mainImages[1]}"
+                        alt="Карточка товара"
+                    />
+                    <img
+                        class="card_image hover-image"
+                        src="${productInfo.mainImages[1]}"
                         alt="Карточка товара"
                     />
                 </div>
@@ -25,24 +29,7 @@ export function createShoppingCard(item, index) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-
-
-    // Добавляем обработчики событий для изменения изображения при наведении
-    const cardImages = document.querySelectorAll('.card_image');
-    cardImages.forEach(cardImage => {
-        const hoverSrc = cardImage.getAttribute('data-hover-src');
-        const originalSrc = cardImage.src;
-
-        cardImage.addEventListener('mouseover', () => {
-            cardImage.src = hoverSrc;
-        });
-
-        cardImage.addEventListener('mouseout', () => {
-            cardImage.src = originalSrc;
-        });
-    });
-
-    // Добавляем обработчики событий для кнопок быстрого просмотра
+    // Обработчики событий для кнопок быстрого просмотра
     const fastViewButtons = document.querySelectorAll('.fast_view-button.fastView');
     fastViewButtons.forEach(button => {
         button.addEventListener('click', function() {

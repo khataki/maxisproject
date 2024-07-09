@@ -59,15 +59,59 @@
     height: 448px; /* Установите нужную высоту */
     position: relative;
     overflow: hidden;
-  }
+}
+
+.card_image {
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease-in-out; /* Плавный переход */
+}
+
+.shopping_card-image {
+  width: 262px; /* Установите нужную ширину */
+  height: 448px; /* Установите нужную высоту */
+  position: relative;
+  overflow: hidden;
+}
 
 .card_image {
   border-radius: 15px;
   height: 100%;
   width: 100%;
   object-fit: cover;
-  transition: 0.3s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease-in-out, z-index 0.5s;
 }
+
+.main-image {
+  z-index: 1;
+  opacity: 1;
+}
+
+.hover-image {
+  z-index: 0;
+  opacity: 0;
+}
+
+.shopping_card-image:hover .hover-image {
+  z-index: 2;
+  opacity: 1;
+}
+
+.shopping_card-image:hover .main-image {
+  z-index: 1;
+  opacity: 0;
+}
+
+
+
 
 .shopping_card-info {
   margin-top: 15px;
@@ -103,8 +147,4 @@
   color: black;
 
 }
-
-.shopping_card-image:hover .card_image {
-    transform: scale(1.2); /* Увеличение изображения при наведении */
-  }
 

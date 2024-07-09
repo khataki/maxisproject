@@ -35,15 +35,10 @@
   .info-content.open {
     max-height: 1000px; /* или любое значение, которое достаточно для полного отображения контента */
   }
-  
-  .arrow {
-    transition: transform 0.5s ease-out;
+
+  .info-header:hover {
+    text-decoration: underline;
   }
-  
-  .arrow.rotate {
-    transform: rotate(180deg);
-  }
-  
 
 .product-images {
     display: flex;
@@ -366,10 +361,6 @@ color: grey;
     display: flex;
     gap: 5px;
     align-items: center;
-}
-
-.info-header:hover {
- text-decoration: underline;
 }
 
 .info-content p, a {

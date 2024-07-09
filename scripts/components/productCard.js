@@ -3,6 +3,19 @@ import { createCharacteristicsTable } from './characteristicsComponent.js';
 import { createProductGrid } from './productGridComponent.js';
 import { productInfo } from './productInfo.js';
 import { items } from './productItemComponent.js';
+import { createHoverCircle } from './hoverCircleComponent.js';
+
+// Пример данных для связанных продуктов
+const relatedProducts = [
+    {
+        imageSrc: 'path/to/related-product-image1.jpg',
+        link: 'product-link-1.html'
+    },
+    {
+        imageSrc: 'path/to/related-product-image2.jpg',
+        link: 'product-link-2.html'
+    }
+];
 
 document.addEventListener('DOMContentLoaded', function() {
     const productTitle = document.getElementById('productTitle');
@@ -96,6 +109,15 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('click', function(event) {
         if (imageModal.classList.contains('open') && !event.target.closest('.modal-content-productcard') && !event.target.closest('.main-img') && !event.target.closest('.thumb-img')) {
             imageModal.classList.remove('open');
+        }
+    });
+
+    // Добавление hover circle к изображениям
+    const imageContainers = document.querySelectorAll('.image-container');
+    imageContainers.forEach((container, index) => {
+        if (relatedProducts[index]) {
+            const hoverCircle = createHoverCircle(relatedProducts[index].imageSrc, relatedProducts[index].link);
+            container.appendChild(hoverCircle);
         }
     });
 

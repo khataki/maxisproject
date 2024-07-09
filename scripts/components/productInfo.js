@@ -10,7 +10,7 @@ export const productInfo = {
     mainImages: [
         '/images/card_example.jpg',
         '/images/example2.jpg',
-        '/images/card_example.jpg',
+        '/images/example3.jpeg',
         '/images/card_example.jpg'
     ],
     additionalImages: [

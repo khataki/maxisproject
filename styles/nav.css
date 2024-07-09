@@ -60,6 +60,68 @@ width: 120%;
     border-radius: 15px;
   }
   
+  .hidden {
+    display: none;
+  }
+  
+  .categories-list, .subcategories-list {
+    position: relative;
+  }
+  
+  .subcategories-list {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    z-index: 1000;
+    border-radius: 5px;
+  }
+  
+  .subcategories-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1001;
+    color: #1c1c1c;
+  }
+  
+  .subcategories-list ul li {
+    padding: 10px;
+    z-index: 1001;
+    color: #1c1c1c;
+  }
+  
+  .nav-list__link-item {
+    position: relative;
+    z-index: 6;
+  }
+
+  
+  .categories-list__li:hover .subcategories-list {
+    display: block;
+  }
+  
+  .categories-list__ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .categories-list__li {
+    padding: 10px;
+    position: relative;
+  }
+  
+  .nav-list__link-item {
+    position: relative;
+    display: block;
+    color: #000; /* Цвет текста для ссылок */
+    text-decoration: none; /* Убирает подчеркивание у ссылок */
+    padding: 10px;
+  }
+  
   
   .nav-list__link {
       text-wrap: nowrap;
@@ -178,4 +240,6 @@ width: 120%;
   .categories-list li:hover .nav-list__link-item {
       color: white;
   }
+
+  
   
