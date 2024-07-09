@@ -61,7 +61,7 @@ width: 120%;
   }
   
   .hidden {
-    display: none;
+    visibility: hidden;
   }
   
   .categories-list, .subcategories-list {
