@@ -7,8 +7,8 @@ export function createHoverCircle(imageSrc, productLink) {
         <div class="circle"></div>
         <div class="hover-modal">
             <img src="${imageSrc}" alt="Related Product">
-            <a href="${productLink}" class="view-product-link">View Product</a>
-            <p class="modal-add-product">Additional info about the product.</p>
+            <a href="${productLink}" class="view-product-link">Перейти</a>
+            <p class="modal-add-product">Берет женский 22.1488</p>
         </div>
     `;
 

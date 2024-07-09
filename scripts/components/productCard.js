@@ -4,15 +4,16 @@ import { createProductGrid } from './productGridComponent.js';
 import { productInfo } from './productInfo.js';
 import { items } from './productItemComponent.js';
 import { createHoverCircle } from './hoverCircleComponent.js';
+import { initZoom } from './modalComponents/zoomComponent.js'; // Импортируем зум компонент
 
 // Пример данных для связанных продуктов
 const relatedProducts = [
     {
-        imageSrc: 'path/to/related-product-image1.jpg',
+        imageSrc: '/images/related_example.jpeg',
         link: 'product-link-1.html'
     },
     {
-        imageSrc: 'path/to/related-product-image2.jpg',
+        imageSrc: '/images/related_example.jpeg',
         link: 'product-link-2.html'
     }
 ];
@@ -66,6 +67,9 @@ document.addEventListener('DOMContentLoaded', function() {
     thumbnailImagesContainer.innerHTML = productInfo.mainImages.map((img, index) => `
         <img src="${img}" data-index="${index}" alt="Thumbnail ${index + 1}" class="thumb-img" />
     `).join('');
+
+    // Инициализируем зумирование для всех изображений
+    initZoom();
 
     let currentImageIndex = 0;
 

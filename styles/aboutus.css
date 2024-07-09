@@ -21,6 +21,7 @@
     grid-template-rows: repeat(2, 1fr);
     justify-content: center;
     align-items: start;
+    max-width: 1440px;
   }
   
   .advantages__item {
@@ -46,7 +47,6 @@
     display: flex;
     flex-direction: column;
     padding: 35px 35px;
-    height: 600px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -150,4 +150,8 @@
       max-height: 500px; /* Вы можете изменить это значение в зависимости от ваших нужд */
       padding: 15px;
       transition: max-height 0.5s, padding 0.5s;
+  }
+
+  .about__us-content-container {
+    max-width: 1400px;
   }
