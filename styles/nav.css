@@ -232,5 +232,9 @@ width: 120%;
     color: white;
 }
 
+.hidden-list {
+  display: none;
+}
+
   
   

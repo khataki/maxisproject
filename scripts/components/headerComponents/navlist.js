@@ -115,11 +115,11 @@ export function createNav() {
     console.error('Catalog link or template not found');
   }
 
-
   const mainCategories = nav.querySelectorAll('.categories-list__li');
 
   mainCategories.forEach(category => {
     const subcategories = category.querySelector('.subcategories-list');
+    
 
     if (subcategories) {
       category.addEventListener('mouseenter', function() {

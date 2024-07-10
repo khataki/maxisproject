@@ -464,7 +464,7 @@ color: grey;
     border-radius: 50%;
     cursor: pointer;
     position: absolute;
-    z-index: 3;
+    z-index: 2;
     margin: 0;
     left: -50px;
     border: white 3px solid;
@@ -533,6 +533,7 @@ color: grey;
     height: 100px;
     opacity: 0.4;
     cursor: crosshair;
+    visibility: hidden;
 }
 
 .zoom-result {
