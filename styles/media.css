@@ -24,7 +24,8 @@
 /* МОБИЛКА */
 
 @media screen and (max-width: 768px) {
-  .newsletter, .header__description, .arrow, .fast_view-button, .footer__list, .logo-feedback, .controls, .mobile-hidden {
+  .newsletter, .header__description, .arrow, .fast_view-button, .footer__list,
+  .logo-feedback, .controls, .mobile-hidden, .zoom-lens, .zoom-result, .hover-circle {
     display: none;
   }
 

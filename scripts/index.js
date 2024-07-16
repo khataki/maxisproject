@@ -38,7 +38,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const toggleVisibility = (triggers) => {
-        triggers.forEach(({ triggerId, contentId, arrowId }) => {
+        triggers.forEach(({
+            triggerId, contentId, arrowId
+        }) => {
             const trigger = document.getElementById(triggerId);
             const content = document.getElementById(contentId);
             const arrow = document.getElementById(arrowId);
@@ -56,11 +58,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    const visibilityToggles = [
-        { triggerId: 'toggleQuality', contentId: 'qualityDescription', arrowId: 'arrowQuality' },
-        { triggerId: 'toggleProduction', contentId: 'productionDescription', arrowId: 'arrowProduction' },
-        { triggerId: 'toggleAboutUs', contentId: 'aboutUsDescription', arrowId: 'arrowAboutUs' }
-    ];
+    const visibilityToggles = [{
+        triggerId: 'toggleQuality',
+        contentId: 'qualityDescription',
+        arrowId: 'arrowQuality'
+    }, {
+        triggerId: 'toggleProduction',
+        contentId: 'productionDescription',
+        arrowId: 'arrowProduction'
+    }, {
+        triggerId: 'toggleAboutUs',
+        contentId: 'aboutUsDescription',
+        arrowId: 'arrowAboutUs'
+    }];
 
     toggleVisibility(visibilityToggles);
 });
@@ -184,10 +194,9 @@ document.addEventListener('DOMContentLoaded', function() {
         thumb.addEventListener('click', function() {
             // Удаляем класс 'selected' у всех миниатюр
             thumbImgs.forEach(img => img.classList.remove('selected'));
-            
+
             // Добавляем класс 'selected' к выбранной миниатюре
             this.classList.add('selected');
         });
     });
 });
-
