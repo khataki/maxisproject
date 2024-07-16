@@ -86,9 +86,11 @@ export function createFooter() {
           </div>
           <div class="footer__geolocation-list">
             <div class="footer__geolocation-item">
+            <i class="fa-solid fa-location-dot"></i>
               <a class="footer__geolocation-link" href="https://2gis.ru/kazan/firm/70000001076283117" target="_blank">Республика Татарстан, г. Казань <br /> ул. Мартына Межлаука <br /> 13 цокольный этаж, 13 павильон</a>
             </div>
             <div class="footer__geolocation-item">
+            <i class="fa-solid fa-location-dot"></i>
               <a class="footer__geolocation-link" href="https://go.2gis.com/1flye" target="_blank">Зеленодольский район <br /> Технополис “Новая Тура” <br /> Красный павильон 8 ряд 56 место</a>
             </div>
           </div>

@@ -483,7 +483,7 @@ color: grey;
     background-color: #fff;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 4;
+    z-index: 5;
     left: -50px;
 }
 
@@ -533,7 +533,8 @@ color: grey;
     height: 100px;
     opacity: 0.4;
     cursor: crosshair;
-    visibility: hidden;
+    z-index: 2;
+    top: 0;
 }
 
 .zoom-result {
@@ -545,7 +546,7 @@ color: grey;
     top: 0;
     background-repeat: no-repeat;
     display: none;
-    z-index: 55;
+    z-index: 3;
 }
 
 .image-container:hover .zoom-result {

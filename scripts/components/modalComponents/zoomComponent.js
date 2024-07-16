@@ -18,6 +18,7 @@ export function initZoom() {
         image.addEventListener('touchmove', moveLens);
 
         function moveLens(e) {
+            e.preventDefault(); // Предотвращает скроллинг страницы при касании
             const pos = getCursorPos(e);
             let x = pos.x - (zoomLens.offsetWidth / 2);
             let y = pos.y - (zoomLens.offsetHeight / 2);
@@ -38,8 +39,8 @@ export function initZoom() {
 
         function getCursorPos(e) {
             const a = image.getBoundingClientRect();
-            const x = e.pageX - a.left;
-            const y = e.pageY - a.top;
+            const x = e.pageX - a.left - window.pageXOffset;
+            const y = e.pageY - a.top - window.pageYOffset;
             return { x, y };
         }
     });
