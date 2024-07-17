@@ -8,12 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <meta property="og:title" content="MAXIS" />
-    <meta
-      property="og:description"
-      content="Производство одежды оптом одежда оптовый завод одежда Казань"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta property="og:image" content="https://example.com/image.jpg" />
     <meta property="og:url" content="https://example.com/" />
   </head>
@@ -31,33 +28,10 @@
       <div id="cartModal" class="cart-modal"></div> 
       <div id="newsletter" class="newsletter"></div>
       <div id="header" class="header"></div>
-    <!-- UI на мобилке/таблетке -->
+      <div id="mainNav" class="main-nav"></div>
     <main class="main">
      <!-- Слайдер -->
-      <section class="slider">
-        <div id="mainNav" class="main-nav"></div>
-        <div class="slides">
-          <div class="slide active">
-            <img src="/images/image1.jpg" alt="Image 1" />
-            <div class="caption">
-              <h2>Slide 1 Title</h2>
-              <p>Slide 1 Description</p>
-            </div>
-          </div>
-          <div class="slide">
-            <img src="/images/image2.jpg" alt="Image 2" />
-            <div class="caption">
-              <h2>Slide 2 Title</h2>
-              <p>Slide 2 Description</p>
-            </div>
-          </div>
-          <!-- Добавь столько слайдов сколько надо-->
-        </div>
-        <div class="navigation">
-          <button class="arrow prev"></button>
-          <button class="arrow next"></button>
-        </div>
-      </section>
+<section id="slider"></section>
 
       <div id="yourContainerId"></div>
 
@@ -186,7 +160,7 @@
       </section>
     </main>
 
-    <script src="/scripts/index.js"></script>
+    <script type="module" src="/scripts/index.js"></script>
     <script type="module" src="/scripts/components/headerComponents/initHeader.js"></script>
     <script type="module" src="/scripts/components/modalComponents/initModals.js"></script>
     <script type="module" src="/scripts/components/footerComponents/initFooter.js"></script>

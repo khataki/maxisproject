@@ -1,3 +1,17 @@
+import { createUserInterfaceMobile } from './components/userInterfaceMobile.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+    createUserInterfaceMobile();
+});
+
+import { createSlider } from '../scripts/components/slider.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+    createSlider();
+});
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
     const message = "Здесь будет сообщение которое надо добавить в бегущую строку";
     const messageElement = document.getElementById("message");
