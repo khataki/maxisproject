@@ -17,10 +17,12 @@ export function createShoppingCard(item, index) {
                     />
                 </div>
             </a>
+                    <div class="fast_view-container-button">
+                    <button class="fast_view-button onFavourite"><i class="fa-regular fa-heart"></i></button>
+                    <button class="fast_view-button onCart"><i class="fa-solid fa-cart-shopping"></i></button>
+                    <button class="fast_view-button fastView" data-index="${index}"><i class="fa-regular fa-eye""></i></button>
+                    </div>
             <div class="shopping_card-info">
-                <div class="fast_view">
-                    <button class="fast_view-button fastView" data-index="${index}">Быстрый просмотр</button>
-                </div>
                 <a href="/public/productcard.html" class="shopping_card-description ajax-link">${productInfo.title}</a>
                 <div class="card-price">${item.price} ₽</div>
             </div>

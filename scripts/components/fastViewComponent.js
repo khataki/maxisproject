@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="modal-image">
                         <img id="mainImage" src="${productInfo.mainImages[0]}" alt="Product Image">
                         <div class="image-navigation">
-                            <button class="prev">&#10094;</button>
-                            <button class="next">&#10095;</button>
+                            <button class="prev fast-view-arrow"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="next fast-view-arrow"><i class="fa-solid fa-chevron-right"></i></button>
                         </div>
                     </div>
                     <div class="modal-info">

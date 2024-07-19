@@ -106,3 +106,9 @@
 .fastview-tab-item {
     font-size: 21px;
 }
+
+.fast-view-arrow {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
