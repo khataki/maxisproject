@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta property="og:title" content="MAXIS" />
     <meta
       property="og:description"
@@ -22,7 +23,7 @@
     <div id="content">
       <div id="cartModal" class="cart-modal"></div> 
       <div id="newsletter" class="newsletter"></div>
-      <div id="header" class="header"></div>
+      <div id="header" class="header mobile-hidden"></div>
       <div id="mainNav" class="main-nav"></div>
       <!-- UI на мобилке/таблетке -->
       <div class="user_interface-mobile">
@@ -240,7 +241,7 @@
           <div class="main-container">
             <section class="product-card">
               <div class="product-images">
-                  <div class="main-images"></div>
+                  <div class="main-images scroll-container"></div>
               </div>
               <div class="thumbnail-images"></div>
           </section>
@@ -287,10 +288,13 @@
         </div>
         <div class="main-container">
           <section class="tab-container"></section>
-          <section class="characteristics"></section>
+          <section class="characteristics">
+          </section>
+          
 
         </div>
         <div class="main-container info-container">
+          <div class="delivery-info-container"></div>
           <section class="info-section">
             <div class="info-item">
                 <div class="info-header" data-target="current-info">

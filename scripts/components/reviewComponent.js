@@ -1,14 +1,14 @@
 export const reviews = [
     {
         name: 'Иван Иванов',
-        photo: '/images/user1.jpg',
+        photo: '/images/user4.jpg',
         rating: 5,
         date: '2024-01-01',
         text: 'Отличный товар! Очень доволен покупкой.'
     },
     {
         name: 'Мария Петрова',
-        photo: '/images/user2.jpg',
+        photo: '/images/user3.jpg',
         rating: 4,
         date: '2024-02-15',
         text: 'Хороший товар, но доставка задержалась.'

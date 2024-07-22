@@ -1,3 +1,5 @@
+import { productInfo } from '../productInfo.js';
+
 export function createHeader() {
   const header = document.createElement('header');
   header.classList.add('header');
@@ -30,10 +32,10 @@ export function createHeader() {
       </div>
       <div class="header__cart-container">
         <button class="cart__button">
-<svg class="icon-header" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 22 20" fill="none">
-  <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.336 18.707a1.92 1.92 0 1 0 0-3.84 1.92 1.92 0 0 0 0 3.84zm-9.6 0a1.92 1.92 0 1 0 0-3.84 1.92 1.92 0 0 0 0 3.84zM1.4 1.417s4.455-.057 3.84 3.84l-.662 3.898a3.14 3.14 0 0 0 3.197 3.783h7.68a4.704 4.704 0 0 0 4.473-3.783l.663-3.946a3.16 3.16 0 0 0-3.216-3.84H9.023"/>
-</svg>
-        <p class="cart__description">Корзина</p>
+          <svg class="icon-header" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 22 20" fill="none">
+            <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.336 18.707a1.92 1.92 0 1 0 0-3.84 1.92 1.92 0 0 0 0 3.84zm-9.6 0a1.92 1.92 0 1 0 0-3.84 1.92 1.92 0 0 0 0 3.84zM1.4 1.417s4.455-.057 3.84 3.84l-.662 3.898a3.14 3.14 0 0 0 3.197 3.783h7.68a4.704 4.704 0 0 0 4.473-3.783l.663-3.946a3.16 3.16 0 0 0-3.216-3.84H9.023"/>
+          </svg>
+          <p class="cart__description">Корзина</p>
         </button>
       </div>
     </div>
@@ -104,16 +106,17 @@ function initCart(header) {
           <div class="cart-items">
             ${cartItems.map(item => `
               <div class="cart-item">
-                <img src="${item.image}" alt="Product Image" class="cart-item-image">
+                <img src="${productInfo.mainImages[0]}" alt="Product Image" class="cart-item-image">
                 <div class="cart-item-details">
                   <h2 class="cart-item-title">${item.title}</h2>
                   <p class="cart-item-code">Код товара: ${item.code}</p>
                   <p class="cart-item-size">Размер: ${item.size}</p>
                   <p class="cart-item-quantity">
                     Кол-во: 
-                    <button class="quantity-btn-cart decrement" data-index="${cartItems.indexOf(item)}">-</button>
+                    <button class="quantity-btn-cart decrement" data-index="${cartItems.indexOf(item)}"><i class="fa-solid fa-minus"></i></button>
                     <span class="quantity-value-cart">${item.quantity}</span>
-                    <button class="quantity-btn-cart increment" data-index="${cartItems.indexOf(item)}">+</button>
+                    <button class="quantity-btn-cart increment" data-index="${cartItems.indexOf(item)}"><i class="fa-solid fa-plus"></i></button>
+                    <button class="quantity-btn-cart delete" data-index="${cartItems.indexOf(item)}"><i class="fa-solid fa-trash-can"></i></button>
                   </p>
                   <p class="cart-item-price" data-unit-price="${item.price}">${item.quantity * item.price}Р.</p>
                 </div>
@@ -138,6 +141,9 @@ function initCart(header) {
         const item = cartItems[index];
         if (!item.unavailable) {
           cartItems[index].quantity = Math.max(0, cartItems[index].quantity - 1);
+          if (cartItems[index].quantity === 0) {
+            cartItems.splice(index, 1); // Удаление товара из корзины
+          }
           renderCart();
           updateCartButton();
         }
@@ -155,23 +161,32 @@ function initCart(header) {
         }
       });
     });
+
+    document.querySelectorAll('.quantity-btn-cart.delete').forEach(button => {
+      button.addEventListener('click', function() {
+        const index = this.getAttribute('data-index');
+        cartItems.splice(index, 1); // Удаление товара из корзины
+        renderCart();
+        updateCartButton();
+      });
+    });
   }
 
   function updateCartButton() {
     const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
     if (cartCount > 0) {
-    cartButton.innerHTML = `
-  <svg class="icon-header" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 22 20" fill="none">
-    <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.336 18.707a1.92 1.92 0 1 0 0-3.84 1.92 1.92 0 0 0 0 3.84zm-9.6 0a1.92 1.92 0 1 0 0-3.84 1.92 1.92 0 0 0 0 3.84zM1.4 1.417s4.455-.057 3.84 3.84l-.662 3.898a3.14 3.14 0 0 0 3.197 3.783h7.68a4.704 4.704 0 0 0 4.473-3.783l.663-3.946a3.16 3.16 0 0 0-3.216-3.84H9.023"/>
-  </svg>
-  ${cartCount > 0 ? `<div class="cart__count">${cartCount}</div>` : ''}
-  <p class="cart__description">Корзина</p>
-    `;
+      cartButton.innerHTML = `
+        <svg class="icon-header" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 22 20" fill="none">
+          <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.336 18.707a1.92 1.92 0 1 0 0-3.84 1.92 1.92 0 0 0 0 3.84zm-9.6 0a1.92 1.92 0 1 0 0-3.84 1.92 1.92 0 0 0 0 3.84zM1.4 1.417s4.455-.057 3.84 3.84l-.662 3.898a3.14 3.14 0 0 0 3.197 3.783h7.68a4.704 4.704 0 0 0 4.473-3.783l.663-3.946a3.16 3.16 0 0 0-3.216-3.84H9.023"/>
+        </svg>
+        ${cartCount > 0 ? `<div class="cart__count">${cartCount}</div>` : ''}
+        <p class="cart__description">Корзина</p>
+      `;
     } else {
       cartButton.innerHTML = `
-<svg class="icon-header" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 22 20" fill="none">
-  <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.336 18.707a1.92 1.92 0 1 0 0-3.84 1.92 1.92 0 0 0 0 3.84zm-9.6 0a1.92 1.92 0 1 0 0-3.84 1.92 1.92 0 0 0 0 3.84zM1.4 1.417s4.455-.057 3.84 3.84l-.662 3.898a3.14 3.14 0 0 0 3.197 3.783h7.68a4.704 4.704 0 0 0 4.473-3.783l.663-3.946a3.16 3.16 0 0 0-3.216-3.84H9.023"/>
-</svg>
+        <svg class="icon-header" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 22 20" fill="none">
+          <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.336 18.707a1.92 1.92 0 1 0 0-3.84 1.92 1.92 0 0 0 0 3.84zm-9.6 0a1.92 1.92 0 1 0 0-3.84 1.92 1.92 0 0 0 0 3.84zM1.4 1.417s4.455-.057 3.84 3.84l-.662 3.898a3.14 3.14 0 0 0 3.197 3.783h7.68a4.704 4.704 0 0 0 4.473-3.783l.663-3.946a3.16 3.16 0 0 0-3.216-3.84H9.023"/>
+        </svg>
         <p class="cart__description">Корзина</p>
       `;
     }

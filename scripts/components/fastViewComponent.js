@@ -23,8 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="modal-image">
                         <img id="mainImage" src="${productInfo.mainImages[0]}" alt="Product Image">
                         <div class="image-navigation">
-                            <button class="prev fast-view-arrow"><i class="fa-solid fa-chevron-left"></i></button>
-                            <button class="next fast-view-arrow"><i class="fa-solid fa-chevron-right"></i></button>
+                            <!-- Navigation dots or other elements can go here if needed -->
                         </div>
                     </div>
                     <div class="modal-info">
@@ -53,8 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <button class="button__purple add-to-cart-button">Добавить в корзину</button>
                             </div>
                         </section>
-                        <div class="thumbnails">
-                            ${productInfo.additionalImages.map(img => `<img class="thumb" src="${img}" alt="Thumbnail">`).join('')}
+                        <div class="thumbnails-container">
+                            <div class="thumbnails">
+                                ${productInfo.mainImages.map((img, index) => `<img class="thumb" src="${img}" alt="Thumbnail" data-index="${index}">`).join('')}
+                            </div>
                         </div>
                         <div class="main-container-fastview">
                             ${createTabs(reviews, questions)} <!-- Добавьте табы -->
@@ -86,22 +87,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const modalFastView = document.getElementById('modalFastView');
 
         const mainImage = document.getElementById('mainImage');
-        const prevButton = document.querySelector('.prev');
-        const nextButton = document.querySelector('.next');
-        let currentImageIndex = 0;
+        const thumbnails = document.querySelectorAll('.thumb');
 
-        function showImage(index) {
-            mainImage.src = productInfo.mainImages[index];
-        }
-
-        prevButton.addEventListener('click', function() {
-            currentImageIndex = (currentImageIndex === 0) ? productInfo.mainImages.length - 1 : currentImageIndex - 1;
-            showImage(currentImageIndex);
-        });
-
-        nextButton.addEventListener('click', function() {
-            currentImageIndex = (currentImageIndex === productInfo.mainImages.length - 1) ? 0 : currentImageIndex + 1;
-            showImage(currentImageIndex);
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                const index = this.getAttribute('data-index');
+                mainImage.src = productInfo.additionalImages[index];
+            });
         });
 
         productGridContainer.addEventListener('click', function(event) {
@@ -204,3 +196,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+

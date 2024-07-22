@@ -4,19 +4,23 @@ export const productInfo = {
     code: 'НФ-00139495',
     brand: 'Дарья',
     price: 1500,
-    description: 'Описание товара',
+    description: 'Этот стильный и удобный халат мод. 269/23 от бренда "Дарья" станет незаменимой частью вашего гардероба. Выполнен из высококачественной лайкры с составом 100% хлопок, он подарит вам невероятный комфорт и приятные ощущения на коже. Идеально подходит для домашнего отдыха и утренних процедур, а также для уютных вечеров дома. Халат имеет современный дизайн и доступен в различных размерах и цветах, что позволит вам выбрать идеальный вариант под ваш стиль и предпочтения.',
     material: 'Лайкра',
     composition: '100% хлопок',
     mainImages: [
         '/images/card_example.jpg',
         '/images/example2.jpg',
         '/images/example3.jpeg',
-        '/images/card_example.jpg'
+        '/images/example4.jpg'
     ],
     additionalImages: [
         '/images/card_example.jpg',
-        '/images/card_example.jpg',
-        '/images/card_example.jpg',
-        '/images/card_example.jpg'
+        '/images/example2.jpg',
+        '/images/example3.jpeg',
+        '/images/example2.jpg',
+        '/images/example3.jpeg',
+        '/images/example2.jpg',
+        '/images/example3.jpeg',
+        '/images/example2.jpg'
     ]
 };

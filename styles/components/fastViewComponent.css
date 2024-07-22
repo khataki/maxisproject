@@ -43,8 +43,8 @@
     border-radius: 15px 0 0 15px;
 }
 .modal-image img {
-    max-width: 70%;
-    height: 70%;
+width: 400px;
+height: 500px;
     border-radius: 15px 0 0 15px;
 }
 .thumbnails {
@@ -55,7 +55,7 @@
 .thumbnails img {
     width: 60px;
     height: 60px;
-    object-fit: cover;
+    object-fit: fill;
     cursor: pointer;
 }
 .modal-info {
@@ -204,7 +204,7 @@
 .tab-header {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 20px;
+    width: 100%;
 }
 .tab-item {
     padding: 10px 20px;
@@ -270,4 +270,22 @@
 .question {
     display: flex;
     gap: 10px;
+}
+
+.thumbnails {
+    display: inline-flex;
+    gap: 10px;
+}
+
+.thumb {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.thumb:hover {
+    filter: brightness(0.6);
 }

@@ -121,3 +121,8 @@
     color: #bbb;
     font-weight: 500;
 }
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+}

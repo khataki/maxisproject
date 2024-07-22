@@ -53,6 +53,8 @@
 
 .shopping_card-item {
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .shopping_card-image {
@@ -94,7 +96,7 @@
 }
 
 .shopping_card-info {
-  margin-top: 15px;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -130,22 +132,124 @@
   color: black;
 }
 
-.fast_view-container-button {
-  background-color: rgba(0, 0, 0, 0.7);
+/* Другие ваши стили */
+
+.shopping_card-item {
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping_card-image {
+  width: 262px;
+  height: 448px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card_image {
+  border-radius: 15px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease-in-out, z-index 0.5s;
+}
+
+.main-image {
+  z-index: 1;
+  opacity: 1;
+}
+
+.hover-image {
+  z-index: 0;
+  opacity: 0;
+}
+
+.shopping_card-image:hover .hover-image {
+  z-index: 2;
+  opacity: 1;
+}
+
+.shopping_card-image:hover .main-image {
+  z-index: 1;
+  opacity: 0;
+}
+
+/* Другие ваши стили */
+
+.shopping_card-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping_card-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.shopping_card-image {
+  width: 262px;
+  height: 448px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card_image {
+  border-radius: 15px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease-in-out, z-index 0.5s;
+}
+
+.main-image {
+  z-index: 1;
+  opacity: 1;
+}
+
+.hover-image {
+  z-index: 0;
+  opacity: 0;
+}
+
+.shopping_card-image:hover .hover-image {
+  z-index: 2;
+  opacity: 1;
+}
+
+.shopping_card-image:hover .main-image {
+  z-index: 1;
+  opacity: 0;
+}
+
+.fast_view-container-button {
+  background-color: rgba(0, 0, 0, 0.85);
+  position: absolute;
   height: 50px;
-  z-index: 5;
+  width: 100%;
+  z-index: 99;
   bottom: 0;
   left: 0;
   right: 0;
-  top: -50px;
   font-size: larger;
-  transition: 0.3s;
+  transition: transform 0.3s ease-in-out;
   font-weight: 400;
-  border-radius: 0 0 20px 20px;
+  border-radius: 0 0 15px 15px;
+  margin: 0;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transform: translateY(100%);
 }
 
-
-.shopping_card-image:hover fast_view-container-button {
+.shopping_card-image-container:hover .fast_view-container-button {
+  transform: translateY(0);
 }

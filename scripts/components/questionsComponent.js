@@ -1,26 +1,40 @@
+// Добавьте этот JavaScript в ваш файл
 export const questions = [
     {
         name: 'Сергей Сидоров',
-        photo: '/images/example3.jpeg',
+        photo: '/images/user1.jpg',
         date: '2024-03-10',
-        text: 'Есть ли в наличии размер 50?'
+        question: 'Есть ли в наличии размер 50?',
+        answer: 'Да, есть в наличии.'
     },
     {
         name: 'Анна Смирнова',
-        photo: '/images/example2.jpg',
+        photo: '/images/user2.jpg',
         date: '2024-04-05',
-        text: 'Какой состав ткани?'
+        question: 'Какой состав ткани?',
+        answer: '100% хлопок.'
     }
 ];
+
+function getInitials(name) {
+    return name.split(' ').map(word => word.charAt(0)).join('');
+}
 
 export function renderQuestions(questions) {
     return questions.map(question => `
         <div class="question">
-            <img src="${question.photo}" alt="${question.name}" class="question-photo">
+            <div class="question-photo">
+                ${question.photo ? `<img src="${question.photo}" alt="${question.name}" class="question-photo-img">` : getInitials(question.name)}
+            </div>
             <div class="question-content">
                 <h3 class="question-name">${question.name}</h3>
                 <div class="question-date">${question.date}</div>
-                <p class="question-text">${question.text}</p>
+                <div class="question-box">
+                    <p><strong>Вопрос:</strong></p>
+                    <p class="question-text">${question.question}</p>
+                </div>
+                <p><strong>Ответ:</strong></p>
+                <p class="question-text">${question.answer}</p>
             </div>
         </div>
     `).join('');

@@ -13,7 +13,7 @@ export function initZoom() {
         zoomResult.classList.add('zoom-result');
 
         image.parentElement.appendChild(zoomLens);
-        image.parentElement.appendChild(zoomResult);
+        image.parentElement.parentElement.appendChild(zoomResult);
 
         zoomLens.style.backgroundImage = `url(${image.src})`;
         zoomResult.style.backgroundImage = `url(${image.src})`;

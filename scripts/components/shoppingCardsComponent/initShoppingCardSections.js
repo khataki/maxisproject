@@ -27,15 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const shoppingCardContainer = document.getElementById(`shoppingCardContainer-${section.id}`);
     if (shoppingCardContainer) {
       shoppingCardContainer.innerHTML = items.map((item, index) => createShoppingCard(item, index)).join('');
+      console.log(`Added items to section: ${section.title}`);
+      // Добавляем обработчики событий после добавления карточек
+      attachCardEventListeners();
+      addScrollEventListeners(section.id);
     } else {
       console.error(`Container for section ${section.id} not found`);
     }
-
-    // Добавляем обработчики событий для изменения изображения при наведении и быстрого просмотра
-    attachCardEventListeners();
-
-    // Добавляем обработчики событий для кнопок прокрутки
-    addScrollEventListeners(section.id);
   });
 });
 
@@ -52,6 +50,31 @@ function attachCardEventListeners() {
       console.log(`Fast view button clicked for item with index: ${itemIndex}`);
       // Заполните данные модального окна здесь на основе itemIndex
       modalFastView.classList.add('open-fastview');
+    });
+  });
+
+  const shoppingCardImages = document.querySelectorAll('.shopping_card-item');
+  shoppingCardImages.forEach(image => {
+    image.addEventListener('mouseenter', function() {
+      const fastViewContainer = this.querySelector('.fast_view-container-button');
+      if (fastViewContainer) {
+        fastViewContainer.classList.remove('fast-view-hidden');
+        fastViewContainer.classList.add('fast-view-open');
+        console.log('Fast view container added');
+      } else {
+        console.error('No element found with class ".fast_view-container-button" inside .shopping_card-item');
+      }
+    });
+
+    image.addEventListener('mouseleave', function() {
+      const fastViewContainer = this.querySelector('.fast_view-container-button');
+      if (fastViewContainer) {
+        fastViewContainer.classList.remove('fast-view-open');
+        fastViewContainer.classList.add('fast-view-hidden');
+        console.log('Fast view container removed');
+      } else {
+        console.error('No element found with class ".fast_view-container-button" inside .shopping_card-item');
+      }
     });
   });
 }
@@ -85,3 +108,4 @@ function addScrollEventListeners(sectionId) {
     console.error(`Error adding scroll event listeners for section ${sectionId}:`, error);
   }
 }
+

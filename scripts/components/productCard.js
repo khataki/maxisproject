@@ -6,6 +6,9 @@ import { items } from './productItemComponent.js';
 import { createHoverCircle } from './hoverCircleComponent.js';
 import { initZoom } from './modalComponents/zoomComponent.js'; // Импортируем зум компонент
 
+// Импортируем функции и данные из cityDelivery.js
+import { createCitySelect, attachCitySelectEventListeners, createDeliveryInfo, updateDeliveryInfo } from './cityDelivery.js';
+
 // Пример данных для связанных продуктов
 const relatedProducts = [
     {
@@ -15,7 +18,8 @@ const relatedProducts = [
     {
         imageSrc: '/images/related_example.jpeg',
         link: 'product-link-2.html'
-    }
+    },
+    // Добавьте другие связанные продукты по необходимости
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -34,9 +38,33 @@ document.addEventListener('DOMContentLoaded', function() {
     const addToCartButton = document.querySelector('.add-to-cart-button');
     const summaryQuantityElement = document.querySelector('.summary-quantity');
     const summaryPriceElement = document.querySelector('.summary-price');
+    const scrollContainer = document.querySelector('.scroll-container');
+    const deliveryInfoContainer = document.querySelector('.delivery-info-container');
 
-    if (!productTitle || !productCode || !tabsContainer || !characteristicsContainer || !productImagesContainer || !thumbnailImagesContainer || !modalImage || !imageModal || !closeModalButton || !prevButton || !nextButton || !productGridContainer || !addToCartButton || !summaryQuantityElement || !summaryPriceElement) {
-        console.error('Не удалось найти один из элементов на странице');
+    const elements = [
+        { name: 'productTitle', element: productTitle },
+        { name: 'productCode', element: productCode },
+        { name: 'tabsContainer', element: tabsContainer },
+        { name: 'characteristicsContainer', element: characteristicsContainer },
+        { name: 'productImagesContainer', element: productImagesContainer },
+        { name: 'thumbnailImagesContainer', element: thumbnailImagesContainer },
+        { name: 'modalImage', element: modalImage },
+        { name: 'imageModal', element: imageModal },
+        { name: 'closeModalButton', element: closeModalButton },
+        { name: 'prevButton', element: prevButton },
+        { name: 'nextButton', element: nextButton },
+        { name: 'productGridContainer', element: productGridContainer },
+        { name: 'addToCartButton', element: addToCartButton },
+        { name: 'summaryQuantityElement', element: summaryQuantityElement },
+        { name: 'summaryPriceElement', element: summaryPriceElement },
+        { name: 'scrollContainer', element: scrollContainer },
+        { name: 'deliveryInfoContainer', element: deliveryInfoContainer }
+    ];
+
+    const missingElements = elements.filter(item => !item.element).map(item => item.name);
+
+    if (missingElements.length > 0) {
+        console.error('Не удалось найти следующие элементы на странице:', missingElements.join(', '));
         return;
     }
 
@@ -57,18 +85,65 @@ document.addEventListener('DOMContentLoaded', function() {
         { label: 'Цвета', value: [...new Set(items.flatMap(item => item.colors))].join(', ') }
     ]);
 
-    // Рендерим основные и эскизные изображения
-    productImagesContainer.innerHTML = productInfo.mainImages.map((img, index) => `
-        <div class="image-container">
-            <img src="${img}" data-index="${index}" alt="Main Image ${index + 1}" class="main-img" />
-        </div>
-    `).join('');
+    // Рендеринг информации о доставке
+    deliveryInfoContainer.innerHTML = createDeliveryInfo();
+    setTimeout(() => {
+        attachCitySelectEventListeners(); // Прикрепляем обработчики событий
+    }, 0);
 
-    thumbnailImagesContainer.innerHTML = productInfo.mainImages.map((img, index) => `
-        <img src="${img}" data-index="${index}" alt="Thumbnail ${index + 1}" class="thumb-img" />
-    `).join('');
+    function renderDesktopImages() {
+        // Рендерим основные и эскизные изображения для десктопной версии
+        productImagesContainer.innerHTML = productInfo.mainImages.map((img, index) => `
+            <div class="main-img-container">
+                <div class="image-container">
+                    <img src="${img}" data-index="${index}" alt="Main Image ${index + 1}" class="main-img" />
+                </div>
+            </div>
+        `).join('');
 
-    // Инициализируем зумирование для всех изображений
+        thumbnailImagesContainer.innerHTML = `
+            <button class="scroll-arrow thumb-prev"><i class="fa-solid fa-chevron-up"></i></button>
+            <div class="thumbnail-container">
+                <div class="thumbnail-images">
+                    ${productInfo.additionalImages.map((img, index) => `
+                        <img src="${img}" data-index="${index}" alt="Thumbnail ${index + 1}" class="thumb-img" />
+                    `).join('')}
+                </div>
+            </div>
+            <button class="scroll-arrow thumb-next"><i class="fa-solid fa-chevron-down"></i></button>
+        `;
+    }
+
+    function renderMobileImages() {
+        // Рендерим основные и эскизные изображения для мобильной версии
+        productImagesContainer.innerHTML = productInfo.mainImages.map((img, index) => `
+            <div class="main-img-container">
+                <div class="image-container">
+                    <img src="${img}" data-index="${index}" alt="Main Image ${index + 1}" class="main-img" />
+                </div>
+            </div>
+        `).join('');
+
+        thumbnailImagesContainer.innerHTML = `
+            <div class="thumbnail-container">
+                <div class="thumbnail-images">
+                    ${productInfo.additionalImages.map((img, index) => `
+                        <img src="${img}" data-index="${index}" alt="Thumbnail ${index + 1}" class="thumb-img" />
+                    `).join('')}
+                </div>
+            </div>
+        `;
+    }
+
+    // Определяем устройство и рендерим соответствующую разметку
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) {
+        renderMobileImages();
+    } else {
+        renderDesktopImages();
+    }
+
+    // Обновляем зум для всех изображений
     initZoom();
 
     let currentImageIndex = 0;
@@ -174,6 +249,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (items[index].quantity > 0) {
             items[index].quantity--;
         }
+        if (items[index].quantity === 0) {
+            items.splice(index, 1); // Удаление товара из массива
+        }
         renderProductGrid();
     }
 
@@ -221,5 +299,43 @@ document.addEventListener('DOMContentLoaded', function() {
         renderProductGrid();
     });
 
+    // Обработчики событий для кнопок скролла, добавляются только на десктопной версии
+    if (!isMobile) {
+        document.querySelector('.thumb-prev').addEventListener('click', function() {
+            thumbnailImagesContainer.querySelector('.thumbnail-container').scrollBy({
+                top: -200,
+                behavior: 'smooth'
+            });
+        });
+
+        document.querySelector('.thumb-next').addEventListener('click', function() {
+            thumbnailImagesContainer.querySelector('.thumbnail-container').scrollBy({
+                top: 200,
+                behavior: 'smooth'
+            });
+        });
+    }
+
     renderProductGrid();
+
+    // Горизонтальная прокрутка для изображений
+    if (scrollContainer) {
+        let isScrolling;
+
+        scrollContainer.addEventListener('scroll', () => {
+            window.clearTimeout(isScrolling);
+
+            isScrolling = setTimeout(() => {
+                const containers = document.querySelectorAll('.image-container');
+                const containerWidth = containers[0].offsetWidth;
+                const scrollLeft = scrollContainer.scrollLeft;
+                const index = Math.round(scrollLeft / containerWidth);
+
+                scrollContainer.scrollTo({
+                    left: index * containerWidth,
+                    behavior: 'smooth'
+                });
+            }, 100);
+        });
+    }
 });

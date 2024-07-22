@@ -10,8 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     createSlider();
 });
 
-
-
 document.addEventListener("DOMContentLoaded", function() {
     const message = "Здесь будет сообщение которое надо добавить в бегущую строку";
     const messageElement = document.getElementById("message");
