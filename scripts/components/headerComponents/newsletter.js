@@ -3,7 +3,7 @@ export function createNewsletter() {
     newsletter.classList.add('newsletter');
     newsletter.innerHTML = `
       <p id="message">
-        Здесь будет сообщение которое надо добавить в бегущую строку
+       c 7:00 до 16:00 по Москве | info@maxis-kzn.ru 
       </p>
     `;
     return newsletter;

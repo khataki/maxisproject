@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('Initializing shopping card sections');
 
   const sections = [
-    { title: 'Новинки', id: 'new-stuff' },
-    { title: 'Акции', id: 'sales' },
-    { title: 'Распродажа', id: 'discounts' }
+    { title: 'Новинки', id: 'new-stuff', popupText: 'Новинка' },
+    { title: 'Акции', id: 'sales', popupText: 'Акция' },
+    { title: 'Распродажа', id: 'discounts', popupText: 'Распродажа' }
   ];
 
   const mainContent = document.getElementById('main-content'); // Контейнер, куда будем добавлять секции
@@ -26,11 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Добавляем карточки товаров в соответствующую секцию
     const shoppingCardContainer = document.getElementById(`shoppingCardContainer-${section.id}`);
     if (shoppingCardContainer) {
-      shoppingCardContainer.innerHTML = items.map((item, index) => createShoppingCard(item, index)).join('');
+      shoppingCardContainer.innerHTML = items.map((item, index) => createShoppingCard(item, index, section.id, section.popupText)).join('');
       console.log(`Added items to section: ${section.title}`);
+      
+      if (window.innerWidth <= 768) { // Проверка ширины экрана для мобильной версии
+        generateSliderRounds(section.id, items.length);
+      }
+      
       // Добавляем обработчики событий после добавления карточек
       attachCardEventListeners();
       addScrollEventListeners(section.id);
+      addFixCardClass(section.id);
     } else {
       console.error(`Container for section ${section.id} not found`);
     }
@@ -79,33 +85,78 @@ function attachCardEventListeners() {
   });
 }
 
-function addScrollEventListeners(sectionId) {
-  try {
-    const slider = document.getElementById(`shopping_cards-slider-${sectionId}`);
-    if (!slider) {
-      console.error(`Slider for section ${sectionId} not found`);
-      return;
-    }
-    
-    const prevButton = slider.querySelector('.cardslide-prev');
-    const nextButton = slider.querySelector('.cardslide-next');
-    const container = document.getElementById(`shoppingCardContainer-${sectionId}`);
+function generateSliderRounds(sectionId, itemCount) {
+  const sliderRounds = document.getElementById(`sliderRounds-${sectionId}`);
+  if (!sliderRounds) {
+    console.error(`Slider rounds container for section ${sectionId} not found`);
+    return;
+  }
 
-    if (prevButton && nextButton && container) {
-      prevButton.addEventListener('click', () => {
-        container.scrollBy({ left: -300, behavior: 'smooth' });
-      });
-
-      nextButton.addEventListener('click', () => {
-        container.scrollBy({ left: 300, behavior: 'smooth' });
-      });
-
-      console.log(`Scroll event listeners added for section ${sectionId}`);
-    } else {
-      console.error(`Error adding scroll event listeners for section ${sectionId}`);
-    }
-  } catch (error) {
-    console.error(`Error adding scroll event listeners for section ${sectionId}:`, error);
+  for (let i = 0; i < itemCount; i++) {
+    const round = document.createElement('div');
+    round.className = 'slider-round';
+    round.dataset.index = i;
+    if (i === 0) round.classList.add('active'); // Первоначально активный круг
+    sliderRounds.appendChild(round);
   }
 }
 
+function addScrollEventListeners(sectionId) {
+  const slider = document.getElementById(`shopping_cards-slider-${sectionId}`);
+  if (!slider) {
+    console.error(`Slider for section ${sectionId} not found`);
+    return;
+  }
+
+  const prevButton = slider.querySelector('.cardslide-prev');
+  const nextButton = slider.querySelector('.cardslide-next');
+  const container = document.getElementById(`shoppingCardContainer-${sectionId}`);
+  const rounds = document.querySelectorAll(`#sliderRounds-${sectionId} .slider-round`);
+  let currentIndex = 0;
+
+  if (prevButton && nextButton && container) {
+    prevButton.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + rounds.length) % rounds.length;
+      updateSliderPosition(container, currentIndex);
+      updateSliderRounds(rounds, currentIndex);
+    });
+
+    nextButton.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % rounds.length;
+      updateSliderPosition(container, currentIndex);
+      updateSliderRounds(rounds, currentIndex);
+    });
+
+    container.addEventListener('scroll', () => {
+      const nearestIndex = Math.round(container.scrollLeft / container.clientWidth);
+      currentIndex = nearestIndex;
+      updateSliderRounds(rounds, currentIndex);
+    });
+  } else {
+    console.error(`Error adding scroll event listeners for section ${sectionId}`);
+  }
+}
+
+function updateSliderPosition(container, index) {
+  const cardWidth = container.clientWidth;
+  const newPosition = index * cardWidth;
+  container.scrollTo({ left: newPosition, behavior: 'smooth' });
+}
+
+function addFixCardClass(sectionId) {
+  const container = document.getElementById(`shoppingCardContainer-${sectionId}`);
+  if (!container) {
+    console.error(`Container for section ${sectionId} not found`);
+    return;
+  }
+  const cards = container.querySelectorAll('.shopping_card-item .shopping_card-image');
+  cards.forEach(card => {
+    card.classList.add('fix-card');
+  });
+}
+
+function updateSliderRounds(rounds, index) {
+  rounds.forEach((round, i) => {
+    round.classList.toggle('active', i === index);
+  });
+}

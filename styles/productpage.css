@@ -2,12 +2,13 @@
   display: flex;
   gap: 70px;
   padding: 30px;
-  justify-content: space-evenly;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .info-container {
-  justify-content: flex-end
+  justify-content: flex-end;
+  flex-direction: column;
 }
 
 .product-info-container {
@@ -15,28 +16,18 @@
 }
 
 .card-table-container {
-  display: flex
+  display: flex;
 }
 
 .product-card {
   display: flex;
   margin: 0;
   gap: 20px;
-  align-items: center
+  align-items: center;
+  position: relative;
+  top: 3%;
 }
 
-.info-content {
-  overflow: hidden;
-  transition: max-height .5s ease-out
-}
-
-.info-content.open {
-  max-height: 1000px
-}
-
-.info-header:hover {
-  text-decoration: underline
-}
 
 .product-images {
   display: flex;
@@ -50,7 +41,8 @@
   display: grid;
   grid-template-columns: repeat(2,1fr);
   grid-template-rows: repeat(2,1fr);
-  gap: 10px
+  column-gap: 15px;
+  row-gap: 10px;
 }
 
 .main-images .main-img {
@@ -139,7 +131,7 @@
 }
 
 .product-grid {
-  font-size: clamp(7px,calc(.4375rem + ((1vw - 4.28px)*.3953)),11px);
+  font-size: clamp(0.875rem, 0.6989rem + 0.8803vw, 1.5rem);
   min-height: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -227,6 +219,10 @@
   margin: 0;
   font-size: 24px;
   color: #000
+}
+
+.fix-shirina {
+  width: 100%;
 }
 
 .add-to-cart {
@@ -361,8 +357,13 @@
   margin: 0
 }
 
-.arrow-actual,.arrow-delivery,.arrow-payment,.delivery-info,.payment-options, .delivery-info-container {
+.arrow-actual,.arrow-delivery,.arrow-payment,.delivery-info-main,.payment-options, .delivery-info-container {
   margin: 0
+}
+
+
+.delivery-info {
+  display: none;
 }
 
 .info-content {
@@ -395,15 +396,14 @@
 
 .modal-content-productcard {
   position: fixed;
-  height: 600px;
-  width: 400px;
-  top: 15vh;
-  left: 50vw;
+  height: 700px;
+  width: 500px;
+  top: 9vh;
+  left: 33vw;
   display: flex;
   flex-direction: column;
   background-color: #fff;
   justify-content: space-evenly;
-  padding: 10px;
 }
 
 .modal-navigation {
@@ -535,43 +535,45 @@
   opacity: 1
 }
 
-.zoom-lens,.zoom-result {
-  position: absolute;
-  border: 1px solid #d4d4d4;
-  top: 0;
-  background-repeat: no-repeat
-}
 
 .zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  opacity: 0.6;
+  background-color: rgb(250, 251, 198);
   width: 100px;
   height: 100px;
-  pointer-events: none;
-  z-index: 2;
-  opacity: .4;
-  cursor: crosshair;
-  filter: brightness(150%)
+  pointer-events: none; /* Чтобы линза не перехватывала события мыши */
 }
 
-.zoom-result {
-  width: 300px;
-  height: 300px;
-  right: -310px;
-  display: none;
-  z-index: 3
+.zoom-result-container {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  max-width: 500px;
+  min-width: 0;
+  min-height: 0;
+  max-height: 710px;
+  width: 500px;
+  height: 710px;
+  border: none;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  transition: 0.2s;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);;
 }
 
-.main-img-container:hover .zoom-result {
-  display: block
+.hidden-fixed {
+  max-width: 0vw;
+  max-height: 0vh;
 }
+
 
 .scroll-arrow {
   background-color: transparent;
   border: 0;
   cursor: pointer
 }
-
-
-
 
 .delivery-info .dropdown-arrow {
   margin-left: 5px;
@@ -649,4 +651,65 @@
 
 .city-select-option:hover {
   background: #f0f0f0;
+}
+
+.zoom-lens {
+  display: none;
+  /* другие стили для линзы */
+}
+
+.main-img-container:hover .zoom-lens {
+  display: block;
+}
+
+.info-section {
+  cursor: pointer;
+}
+
+.info-content {
+  overflow: hidden;
+  cursor: pointer;
+  transition: max-height .5s ease-out
+}
+
+.info-content.open {
+  max-height: 1000px
+}
+
+.info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.info-header span {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.info-header span:hover {
+  text-decoration: underline;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+  margin: 0;
+  cursor: pointer;
+}
+
+.info-header.open .arrow-icon {
+  transform: rotate(180deg);
+  
+}
+
+
+.info-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.info-content.open {
+  max-height: 500px; /* Достаточно большое значение для отображения содержимого */
 }

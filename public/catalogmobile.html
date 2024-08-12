@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Категории</title>    
     <link rel="stylesheet" href="/styles/index.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/styles/components/catalogmobile.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta property="og:title" content="MAXIS" />
@@ -203,17 +207,72 @@
     </div>
 
     <div class="catalog-mobile-data">
-      <h2>Категории</h2>
-      <ul>
-        <li><a href="/public/catalog.html" id="category-men" class="ajax-link active">Мужской ассортимент</a></li>
-        <li><a href="/public/catalog.html" id="category-women" class="ajax-link">Женский ассортимент</a></li>
-        <li><a href="/public/catalog.html" id="category-dresses" class="ajax-link">Платья</a></li>
-        <li><a href="/public/catalog.html" id="category-tops" class="ajax-link">Футболки и блузки</a></li>
-        <li><a href="/public/catalog.html" id="category-sets" class="ajax-link">Комплекты и пижамы</a></li>
-        <li><a href="/public/catalog.html" id="category-kids" class="ajax-link">Детский ассортимент</a></li>
-        <li><a href="/public/catalog.html" id="category-muslim" class="ajax-link">Мусульманский ассортимент</a></li>
-    </ul>
-
+      <h2 class="categories-mobile-title">Категории</h2>
+      <ul class="categories-mobile-ul">
+        <li class="categories-mobile-li">
+          <a href="/public/catalog.html" id="category-men" class="ajax-link active">Мужской ассортимент</a>
+          <i class="fa-solid fa-chevron-down toggle-icon"></i>
+          <ul class="subcategories-mobile-ul">
+            <li><a href="/public/catalog.html">Футболки</a></li>
+            <li><a href="/public/catalog.html">Рубашки</a></li>
+            <li><a href="/public/catalog.html">Брюки</a></li>
+          </ul>
+        </li>
+        <li class="categories-mobile-li">
+          <a href="/public/catalog.html" id="category-women" class="ajax-link">Женский ассортимент</a>
+          <i class="fa fa-chevron-down toggle-icon"></i>
+          <ul class="subcategories-mobile-ul">
+            <li><a href="/public/catalog.html">Футболки</a></li>
+            <li><a href="/public/catalog.html">Рубашки</a></li>
+            <li><a href="/public/catalog.html">Брюки</a></li>
+          </ul>
+        </li>
+        <li class="categories-mobile-li">
+          <a href="/public/catalog.html" id="category-dresses" class="ajax-link">Платья</a>
+          <i class="fa fa-chevron-down toggle-icon"></i>
+          <ul class="subcategories-mobile-ul">
+            <li><a href="/public/catalog.html">Летние платья</a></li>
+            <li><a href="/public/catalog.html">Вечерние платья</a></li>
+            <li><a href="/public/catalog.html">Коктейльные платья</a></li>
+          </ul>
+        </li>
+        <li class="categories-mobile-li">
+          <a href="/public/catalog.html" id="category-tops" class="ajax-link">Футболки и блузки</a>
+          <i class="fa fa-chevron-down toggle-icon"></i>
+          <ul class="subcategories-mobile-ul">
+            <li><a href="/public/catalog.html">Футболки</a></li>
+            <li><a href="/public/catalog.html">Блузки</a></li>
+            <li><a href="/public/catalog.html">Поло</a></li>
+          </ul>
+        </li>
+        <li class="categories-mobile-li">
+          <a href="/public/catalog.html" id="category-sets" class="ajax-link">Комплекты и пижамы</a>
+          <i class="fa fa-chevron-down toggle-icon"></i>
+          <ul class="subcategories-mobile-ul">
+            <li><a href="/public/catalog.html">Спортивные комплекты</a></li>
+            <li><a href="/public/catalog.html">Домашние комплекты</a></li>
+            <li><a href="/public/catalog.html">Пижамные комплекты</a></li>
+          </ul>
+        </li>
+        <li class="categories-mobile-li">
+          <a href="/public/catalog.html" id="category-kids" class="ajax-link">Детский ассортимент</a>
+          <i class="fa fa-chevron-down toggle-icon"></i>
+          <ul class="subcategories-mobile-ul">
+            <li><a href="/public/catalog.html">Пижамы</a></li>
+            <li><a href="/public/catalog.html">Одежда для девочек</a></li>
+            <li><a href="/public/catalog.html">Одежда для мальчиков</a></li>
+          </ul>
+        </li>
+        <li class="categories-mobile-li">
+          <a href="/public/catalog.html" id="category-muslim" class="ajax-link">Мусульманский ассортимент</a>
+          <i class="fa fa-chevron-down toggle-icon"></i>
+          <ul class="subcategories-mobile-ul">
+            <li><a href="/public/catalog.html">Платья</a></li>
+            <li><a href="/public/catalog.html">Костюмы</a></li>
+            <li><a href="/public/catalog.html">Туники</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
 
     <script src="/scripts/mobile.js"></script>

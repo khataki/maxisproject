@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MAXIS</title>
     <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/components/burgerMenu.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -19,7 +20,7 @@
   <div id="modalFastViewContainer"></div>
 
   <template id="catalog-template">
-    <svg class="catalog__arrow" width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="catalog__arrow" width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M5.70711 9.71069C5.31658 10.1012 5.31658 10.7344 5.70711 11.1249L10.5993 16.0123C11.3805 16.7927 12.6463 16.7924 13.4271 16.0117L18.3174 11.1213C18.708 10.7308 18.708 10.0976 18.3174 9.70708C17.9269 9.31655 17.2937 9.31655 16.9032 9.70708L12.7176 13.8927C12.3271 14.2833 11.6939 14.2832 11.3034 13.8927L7.12132 9.71069C6.7308 9.32016 6.09763 9.32016 5.70711 9.71069Z" fill="white"/>
     </svg>
 </template>
@@ -44,6 +45,7 @@
         <div class="advantages__container">
           <div class="advantages__item">
             <div class="advantages__title">СКИДКИ</div>
+            <i class="fa-solid fa-percent"></i> 
             <div class="advantages__description">
               Скидки на товар и распродажа каждую неделю
             </div>
@@ -51,7 +53,7 @@
           <div class="advantages__item">
             <div class="advantages__title">
               Минимальная сумма заказа <br />
-              20 000₽
+              20 000 руб
             </div>
             <div class="advantages__description">
               Цены действительны при заказе от 20 000 рублей
@@ -59,6 +61,7 @@
           </div>
           <div class="advantages__item">
             <div class="advantages__title">Нет привязки к размерному ряду</div>
+            <i class="fa-solid fa-person-dress"></i>
             <div class="advantages__description">
               Более 1000 моделей (всех размеров) в наличии на складе.
               Выбирайтетот размер, который вам нужен
@@ -68,6 +71,7 @@
             <div class="advantages__title">
               Оперативная доставка по всей Россиии странам СНГ
             </div>
+            <i class="fa-solid fa-truck"></i>
             <div class="advantages__description">
               Организуем доставку в кратчайшие сроки по наиболее выгодной
               цене.Работаем со всеми транспортными компаниями
@@ -75,12 +79,14 @@
           </div>
           <div class="advantages__item">
             <div class="advantages__title">Индивидуальный подход</div>
+            <i class="fa-solid fa-face-smile"></i>
             <div class="advantages__description">
               Условия сотрудничества, подходящие Вам и Вашему бизнесу
             </div>
           </div>
           <div class="advantages__item">
             <div class="advantages__title">Пойдем навстречу</div>
+            <i class="fa-solid fa-handshake"></i>
             <div class="advantages__description">
               Бронирование заказа на срок до 3 дней без предоплаты
             </div>
@@ -174,7 +180,9 @@
     <script type="module" src="/scripts/components/reviewComponent.js"></script>
     <script type="module" src="/scripts/components/questionsComponent.js"></script>
     <script type="module" src="/scripts/components/fastViewComponent.js"></script> 
-    <script type="module" src="/scripts/components/сardComponent.js"></script>     
+    <script type="module" src="/scripts/components/сardComponent.js"></script>  
+    <script type="module" src="/scripts/components/scrollToTop.js"></script>   
+    <script type="module" src="/scripts/components/burgerMenuComponent/burgerMenu.js"></script>
     </div>
   </body>
 </html>

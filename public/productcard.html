@@ -238,10 +238,13 @@
       <main class="main">
         <div class="product-info-container">
         <div class="card-table-container">
-          <div class="main-container">
+          <div class="main-container fix-align">
             <section class="product-card">
               <div class="product-images">
-                  <div class="main-images scroll-container"></div>
+                  <div class="main-images scroll-container">
+                    
+                  </div>
+                  <div id="zoom-result-container" class="zoom-result-container hidden-fixed"></div>
               </div>
               <div class="thumbnail-images"></div>
           </section>
@@ -256,10 +259,12 @@
                 </div>
             </div>
         </div>
+        
+
 
           </div>
-          <div class="main-container">
-            <section class="product-selection">
+          <div class="main-container fix-shirina">
+            <section class="product-selection fix-shirina">
               <div class="product-header">
                 <h1 id="productTitle" class="product-title">
                   Халат мод. 469/23
@@ -286,7 +291,7 @@
             </section>
           </div>
         </div>
-        <div class="main-container">
+        <div class="main-container  fix-align">
           <section class="tab-container"></section>
           <section class="characteristics">
           </section>
@@ -297,53 +302,42 @@
           <div class="delivery-info-container"></div>
           <section class="info-section">
             <div class="info-item">
-                <div class="info-header" data-target="current-info">
-                    <span class="actual-info">Актуальная информация</span>
-                </div>
-                <div class="info-content" id="current-info">
-                    <p>
-                        Сумма минимального заказа 1000, но если у Вас в корзине товары
-                        только из группы "ТУРБО" и "Постельное белье", то минимальная
-                        сумма - 10 000 руб.
-                    </p>
-                    <p>Действует система скидок на заказы от 50 000 руб.</p>
-                    <p>
-                        Срок отгрузки в настоящее время составляет 2-10 дней с момента
-                        оплаты. Быстрые отгрузки сохранились в группе "ТУРБО" - 1-3
-                        дня.
-                    </p>
-                    <p><a href="#">Подробнее</a></p>
-                </div>
+              <div class="info-header" data-target="current-info">
+                <span class="actual-info">Актуальная информация</span>
+                <i class="fa fa-chevron-down arrow-icon"></i>
+              </div>
+              <div class="info-content" id="current-info">
+                <p>Сумма минимального заказа <span class="fix-bold">1000</span>, но если у Вас в корзине товары только из группы "ТУРБО" и "Постельное белье", то минимальная сумма - <span class="fix-bold">10 000 руб.</span></p>
+                <p>Действует система скидок на заказы от <span class="fix-bold">50 000 руб.</span></p>
+                <p>Срок отгрузки в настоящее время составляет 2-10 дней с момента оплаты. Быстрые отгрузки сохранились в группе "ТУРБО" - 1-3 дня.</p>
+                <p><a href="#">Подробнее</a></p>
+              </div>
             </div>
             <div class="info-item">
-                <div class="info-header" data-target="payment-options">
-                    <span class="payment-options">Варианты оплаты</span>
-                </div>
-                <div class="info-content" id="payment-options">
-                    <p>На расчетный счет</p>
-                    <p>В кассу предприятия и др. видами платежей</p>
-                    <p>И др.</p>
-                    <p><a href="#">Подробнее</a></p>
-                </div>
+              <div class="info-header" data-target="payment-options">
+                <span class="payment-options">Варианты оплаты</span>
+                <i class="fa fa-chevron-down arrow-icon"></i>
+              </div>
+              <div class="info-content" id="payment-options">
+                <p>На расчетный счет</p>
+                <p>В кассу предприятия и др. видами платежей</p>
+                <p>И др.</p>
+                <p><a href="#">Подробнее</a></p>
+              </div>
             </div>
             <div class="info-item">
-                <div class="info-header" data-target="delivery-info">
-                    <span class="delivery-info">Доставка</span>
-                </div>
-                <div class="info-content" id="delivery-info">
-                    <p>Вы сами выбираете удобную для Вас транспортную компанию</p>
-                    <p>
-                        Доставка до терминалов транспортных компаний по г. Иваново
-                        бесплатно
-                    </p>
-                    <p>
-                        Возможно согласование индивидуальной схемы доставки для
-                        больших партий груза
-                    </p>
-                    <p><a href="#">Подробнее</a></p>
-                </div>
+              <div class="info-header" data-target="delivery-info">
+                <span class="delivery-info-main">Доставка</span>
+                <i class="fa fa-chevron-down arrow-icon"></i>
+              </div>
+              <div class="info-content" id="delivery-info">
+                <p>Вы сами выбираете удобную для Вас транспортную компанию</p>
+                <p>Доставка до терминалов транспортных компаний по г. Иваново бесплатно</p>
+                <p>Возможно согласование индивидуальной схемы доставки для больших партий груза</p>
+                <p><a href="#">Подробнее</a></p>
+              </div>
             </div>
-        </section>
+          </section>
         </div>
 
         <div id="similar-products-container"></div>

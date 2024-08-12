@@ -1,0 +1,178 @@
+/* Общие стили для страницы корзины */
+.cart-page, .main-pay-and-delivery {
+    padding: 50px;
+}
+
+.cart-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-title {
+    margin-left: 70px;
+}
+
+.cart-table th,
+.cart-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.cart-table th {
+    background-color: #f4f4f4;
+}
+
+.cart-item-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.quantity-btn {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.quantity-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.quantity-btn:active {
+    background-color: #ddd;
+}
+
+.quantity-value {
+    margin: 0 10px;
+}
+
+.delete-btn {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #d9534f;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #f0f0f0;
+    color: #c9302c;
+}
+
+.delete-btn:active {
+    background-color: #ddd;
+}
+
+.cart-summary {
+    text-align: right;
+}
+
+.cart-summary .summary-total {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.table-link {
+    color: #6f42c1;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.table-link:hover {
+    color: #281649;
+    text-decoration: underline;
+}
+
+.table-link:active {
+    color: #482e83;
+}
+
+.container-page {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.payment-info-container-page, .delivery-info-container-page {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 15px;
+}
+
+.container-page * {
+    margin: 0;
+}
+
+/* Стили для мобильной версии */
+@media (max-width: 768px) {
+    .cart-table {
+        display: flex;
+        width: 100%;
+    }
+
+    .cart-title {
+        margin-left: 0;
+    }
+
+    #cartItemsContainer {
+        margin: 0;
+        width: 100%;
+    }
+
+    .cart-table thead {
+        display: none;
+    }
+
+    .cart-table tr {
+        display: block;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .cart-table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+        align-items: center;
+    }
+
+    .delete-btn {
+        margin: 0;
+    }
+
+    .cart-table td:before {
+        content: attr(data-label);
+        flex-basis: 50%;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    .cart-summary {
+        text-align: left;
+    }
+
+    .table-link {
+        margin: 0;
+    }
+
+
+}

@@ -1,0 +1,66 @@
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+}
+
+.contact-info,
+.contact-form {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.contact-form h2 {
+    margin-bottom: 10px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.phone-container, .schedule, .address-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.telephone-link {
+    text-decoration: none;
+    color: grey;
+    font-size: 24px;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.contact-form {
+    margin: 0;
+}
+
+.adresses-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

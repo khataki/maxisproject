@@ -93,6 +93,18 @@
   .footer__socials-icon {
       margin: 0;
       margin-bottom: 10px;
+      background-color: #f2f2f2;
+      display: flex;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.5s;
+  }
+
+  .footer__socials-icon:hover {
+    scale: 1.2;
   }
   
   .footer-feedback__container, .mobile-search {
@@ -106,6 +118,9 @@
   .footer__list-first__ul,
   .footer__list-second__ul {
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
   
   .footer__link {
@@ -131,4 +146,15 @@
 .footer__link:hover {
 color: #5b0f67;
 text-decoration: underline;
+}
+
+.footer__list-item {
+  margin: 0
+}
+
+.footer__geolocation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
 }

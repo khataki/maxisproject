@@ -1,13 +1,8 @@
 import { createUserInterfaceMobile } from './components/userInterfaceMobile.js';
+import { createSlider } from './components/sliderComponent.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     createUserInterfaceMobile();
-});
-
-import { createSlider } from '../scripts/components/slider.js';
-
-document.addEventListener('DOMContentLoaded', () => {
-    createSlider();
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -86,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     toggleVisibility(visibilityToggles);
 });
-
 
 
 
@@ -212,3 +206,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+createSlider(
+    [
+        '../images/slider1.jpeg',
+        '../images/slider2.png',
+        '../images/slider3.webp'
+    ],
+    'slider'
+);
+
+createSlider()

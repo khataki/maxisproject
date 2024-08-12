@@ -1,0 +1,67 @@
+.fix-shirina {
+    width: 100%;
+}
+
+.fixed_font-size {
+    font-size: 20px;
+}
+
+.favorite-card-button {
+    display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+    .fixed_font-size {
+        font-size: 14px;
+      }
+
+      .favorite-card-button {
+        display: flex;
+      }
+
+      .fix-card {
+        width: 300px;
+        height: 425px;
+        object-fit: contain;
+      }
+}
+
+.fix-font-grid div {
+    font-size: 14px;
+}
+
+.add-to-cart-button {
+    height: 64px;
+    font-size: 24px;
+}
+
+.footer-logo {
+    height: 110px;
+    width: 341px;
+}
+
+.fix-color {
+    background-color: #d7b8b6;
+    color: #000;
+    height: 64px;
+    font-size: 18px;
+    border-radius: 0%;
+}
+
+.header__cart-container {
+    display: flex;
+}
+
+.fix-bold {
+    font-weight: bold;
+}
+
+/* Класс, который блокирует прокрутку */
+.no-scroll {
+    overflow: hidden;
+}
+
+.fix-align {
+    align-items: start;
+}

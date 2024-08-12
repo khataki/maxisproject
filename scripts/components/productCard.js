@@ -92,8 +92,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 0);
 
     function renderDesktopImages() {
+        // Преобразуем mainImages и additionalImages в массивы для использования в компоненте
+        const mainImagesArray = Object.values(productInfo.mainImages).flat();
+        const additionalImagesArray = Object.values(productInfo.additionalImages).flat();
+
         // Рендерим основные и эскизные изображения для десктопной версии
-        productImagesContainer.innerHTML = productInfo.mainImages.map((img, index) => `
+        productImagesContainer.innerHTML = mainImagesArray.map((img, index) => `
             <div class="main-img-container">
                 <div class="image-container">
                     <img src="${img}" data-index="${index}" alt="Main Image ${index + 1}" class="main-img" />
@@ -105,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <button class="scroll-arrow thumb-prev"><i class="fa-solid fa-chevron-up"></i></button>
             <div class="thumbnail-container">
                 <div class="thumbnail-images">
-                    ${productInfo.additionalImages.map((img, index) => `
+                    ${additionalImagesArray.map((img, index) => `
                         <img src="${img}" data-index="${index}" alt="Thumbnail ${index + 1}" class="thumb-img" />
                     `).join('')}
                 </div>
@@ -115,8 +119,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function renderMobileImages() {
+        // Преобразуем mainImages и additionalImages в массивы для использования в компоненте
+        const mainImagesArray = Object.values(productInfo.mainImages).flat();
+        const additionalImagesArray = Object.values(productInfo.additionalImages).flat();
+
         // Рендерим основные и эскизные изображения для мобильной версии
-        productImagesContainer.innerHTML = productInfo.mainImages.map((img, index) => `
+        productImagesContainer.innerHTML = mainImagesArray.map((img, index) => `
             <div class="main-img-container">
                 <div class="image-container">
                     <img src="${img}" data-index="${index}" alt="Main Image ${index + 1}" class="main-img" />
@@ -127,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
         thumbnailImagesContainer.innerHTML = `
             <div class="thumbnail-container">
                 <div class="thumbnail-images">
-                    ${productInfo.additionalImages.map((img, index) => `
+                    ${additionalImagesArray.map((img, index) => `
                         <img src="${img}" data-index="${index}" alt="Thumbnail ${index + 1}" class="thumb-img" />
                     `).join('')}
                 </div>
@@ -149,7 +157,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentImageIndex = 0;
 
     function showImage(index) {
-        modalImage.src = productInfo.mainImages[index];
+        const mainImagesArray = Object.values(productInfo.mainImages).flat();
+        modalImage.src = mainImagesArray[index];
         currentImageIndex = index;
     }
 
@@ -175,12 +184,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Перелистывание изображений
     prevButton.addEventListener('click', function() {
-        currentImageIndex = (currentImageIndex === 0) ? productInfo.mainImages.length - 1 : currentImageIndex - 1;
+        const mainImagesArray = Object.values(productInfo.mainImages).flat();
+        currentImageIndex = (currentImageIndex === 0) ? mainImagesArray.length - 1 : currentImageIndex - 1;
         showImage(currentImageIndex);
     });
 
     nextButton.addEventListener('click', function() {
-        currentImageIndex = (currentImageIndex === productInfo.mainImages.length - 1) ? 0 : currentImageIndex + 1;
+        const mainImagesArray = Object.values(productInfo.mainImages).flat();
+        currentImageIndex = (currentImageIndex === mainImagesArray.length - 1) ? 0 : currentImageIndex + 1;
         showImage(currentImageIndex);
     });
 
@@ -215,18 +226,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function attachGridEventListeners() {
-        const decrementButtons = document.querySelectorAll('.quantity .decrement');
-        const incrementButtons = document.querySelectorAll('.quantity .increment');
-        const decrementColorButtons = document.querySelectorAll('.color .decrement-color');
-        const incrementColorButtons = document.querySelectorAll('.color .increment-color');
+        const decrementButtons = productGridContainer.querySelectorAll('.decrement');
+        const incrementButtons = productGridContainer.querySelectorAll('.increment');
+        const decrementColorButtons = productGridContainer.querySelectorAll('.decrement-color');
+        const incrementColorButtons = productGridContainer.querySelectorAll('.increment-color');
 
-        // Удаляем предыдущие обработчики событий
-        removeEventListeners('.quantity .decrement', 'click', handleDecrementClick);
-        removeEventListeners('.quantity .increment', 'click', handleIncrementClick);
-        removeEventListeners('.color .decrement-color', 'click', handleDecrementColorClick);
-        removeEventListeners('.color .increment-color', 'click', handleIncrementColorClick);
-
-        // Добавляем новые обработчики событий
         decrementButtons.forEach(button => {
             button.addEventListener('click', handleDecrementClick);
         });
@@ -246,19 +250,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function handleDecrementClick(event) {
         const index = parseInt(event.target.getAttribute('data-index'), 10);
-        if (items[index].quantity > 0) {
-            items[index].quantity--;
+        const item = items[index];
+        if (item.availability) {
+            item.quantity = Math.max(0, item.quantity - 1);
+            updateSummary();
+            renderProductGrid(); // Перерисовываем сетку продуктов после изменения
         }
-        if (items[index].quantity === 0) {
-            items.splice(index, 1); // Удаление товара из массива
-        }
-        renderProductGrid();
     }
 
     function handleIncrementClick(event) {
         const index = parseInt(event.target.getAttribute('data-index'), 10);
-        items[index].quantity++;
-        renderProductGrid();
+        const item = items[index];
+        if (item.availability) {
+            item.quantity += 1;
+            updateSummary();
+            renderProductGrid(); // Перерисовываем сетку продуктов после изменения
+        }
     }
 
     function handleDecrementColorClick(event) {

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<template id="catalog-template">
+    <svg class="catalog__arrow" width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5.70711 9.71069C5.31658 10.1012 5.31658 10.7344 5.70711 11.1249L10.5993 16.0123C11.3805 16.7927 12.6463 16.7924 13.4271 16.0117L18.3174 11.1213C18.708 10.7308 18.708 10.0976 18.3174 9.70708C17.9269 9.31655 17.2937 9.31655 16.9032 9.70708L12.7176 13.8927C12.3271 14.2833 11.6939 14.2832 11.3034 13.8927L7.12132 9.71069C6.7308 9.32016 6.09763 9.32016 5.70711 9.71069Z" fill="white"/>
+    </svg>
+</template>
+
+<body>
+
+        <div id="cartModal" class="cart-modal"></div> 
+        <div id="newsletter" class="newsletter"></div>
+        <div id="header" class="header"></div>
+        <div id="mainNav" class="main-nav"></div>
+
+    
+    <main class="cart-page">
+        <h1 class="cart-title">Корзина</h1>
+        <div class="cart-container">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Фото</th>
+                        <th>Товар</th>
+                        <th>Код</th>
+                        <th>Размер</th>
+                        <th>Цвет</th>
+                        <th>Количество</th>
+                        <th>Цена</th>
+                        <th>Удалить</th>
+                    </tr>
+                </thead>
+                <tbody id="cartItemsContainer">
+                    <!-- Здесь будут отображаться товары в корзине -->
+                </tbody>
+            </table>
+            <div class="cart-summary">
+                <p class="summary-total">Итого: <span id="totalPrice">0Р.</span></p>
+                <button class="button__purple" id="checkoutButton">Оформить заказ</button>
+            </div>
+        </div>
+    </main>
+    
+    
+    <script type="module" src="/scripts/cartPage.js"></script>
+    <script type="module" src="/scripts/components/modalComponents/modal.js"></script>
+    <script type="module" src="/scripts/index.js"></script>
+    <script type="module" src="/scripts/components/headerComponents/initHeader.js"></script>
+    <script type="module" src="/scripts/components/modalComponents/initModals.js"></script>
+    <script type="module" src="/scripts/components/footerComponents/initFooter.js"></script>
+    <script type="module" src="/scripts/components/сardComponent.js"></script>  
+    <script type="module" src="/scripts/components/scrollToTop.js"></script>    
+</body>
+</html>

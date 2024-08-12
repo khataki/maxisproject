@@ -15,11 +15,12 @@
     min-width: 100%;
     max-width: 1440px;
     height: 100%;
-    opacity: 0;
     transition: opacity 1s ease-in-out;
     position: absolute;
     top: 0;
     left: 0;
+    opacity: 1;
+    position: relative;
   }
   
   .slide.active {
@@ -30,6 +31,7 @@
   .slide img {
     width: 100%;
     display: block;
+    height: 100%;
   }
   
   .caption {
@@ -72,4 +74,51 @@
 
 .dot.active {
     background-color: #494949;
+}
+
+.slider-container {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+.indicator {
+  height: 6px;
+  width: 6px;
+  margin: 0 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.indicator.active {
+  background-color: #960099;
+  scale: 2;
 }

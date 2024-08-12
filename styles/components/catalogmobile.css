@@ -1,0 +1,111 @@
+.catalog-mobile-data {
+    padding: 75px 25px 75px 25px;
+    display: none;
+}
+
+.categories-mobile-title {
+    margin-bottom: 25px;
+}
+
+.catalog-mobile-data-burger {
+    display: none;
+}
+
+
+.categories-mobile-ul {
+    padding: 0;
+    flex-direction: column;
+    gap: 10px;
+    height: 600px;
+    display: flex;
+}
+
+.categories-mobile-li {
+    text-wrap: nowrap;
+}
+
+ul, li, a {
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+.subcategories-mobile-ul {
+    max-height: 0;
+    transition: 0.5s;
+    display: none;
+    padding: 10px;
+    
+}
+
+.categories-mobile-li {
+    margin: 0;
+}
+
+.categories-mobile-li a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    margin-right: 10px;
+}
+
+.subcategories-mobile-ul a {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.subcategories-mobile-ul.open {
+    max-height: 1000px; /* Достаточно большое значение для анимации */
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.subcategories-mobile-ul li {
+    margin: 0;
+}
+
+.toggle-icon {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.toggle-icon.rotate {
+    transform: rotate(180deg);
+}
+
+/* Адаптация под мобильную версию */
+@media (max-width: 768px) {
+    .catalog-mobile-data {
+        padding: 50px 20px 50px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .catalog-mobile-data-burger {
+        display: flex;
+    }
+
+    .categories-mobile-title {
+        font-size: 20px;
+        margin: 0;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .categories-mobile-li {
+        font-size: 14px;
+    }
+
+    .subcategories-mobile-ul a {
+        font-size: 12px;
+    }
+
+    .toggle-icon {
+        font-size: 12px;
+    }
+}

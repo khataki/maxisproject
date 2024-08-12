@@ -46,10 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
     event.stopPropagation();
     openModal('forgotPasswordModal');
   });
-  document.getElementById('openFeedbackModalButton').addEventListener('click', (event) => {
-    event.stopPropagation();
-    openModal('feedbackModal');
-  });
+  // document.getElementById('openFeedbackModalButton').addEventListener('click', (event) => {
+  //   event.stopPropagation();
+  //   openModal('feedbackModal');
+  // });
 
   // Обработчики событий для переключения между модальными окнами
   document.getElementById('forgotPasswordModalButton').addEventListener('click', (event) => {

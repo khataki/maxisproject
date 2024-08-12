@@ -31,3 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
         forgotPasswordMobile.classList.add('hidden');
     });
 });
+
+document.querySelectorAll('.toggle-icon').forEach(icon => {
+    icon.addEventListener('click', function() {
+      const subcategories = this.nextElementSibling;
+      subcategories.classList.toggle('open');
+      subcategories.style.maxHeight = subcategories.classList.contains('open') ? subcategories.scrollHeight + 'px' : '0';
+      this.classList.toggle('rotate');
+    });
+  });

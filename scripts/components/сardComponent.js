@@ -1,19 +1,32 @@
 import { productInfo } from './productInfo.js';
+import { colorMap } from './productItemComponent.js';
 
-export function createShoppingCard(item, index) {
+export function createShoppingCard(item, index, sectionId, popupText) {
+  const colorOptions = item.colors.map((color, colorIndex) => `
+    <div class="color-option" data-index="${index}" data-color="${color}" style="background-color: ${colorMap[color]};"></div>
+  `).join('');
+
+  const colorLabel = `Цвет: ${item.colors.join(', ')}`;
+
   return `
-    <div class="shopping_card-item">
+    <div class="shopping_card-item" data-index="${index}">
       <div class="shopping_card-image-container">
+        <div class="popup-visual popup-${sectionId}">${popupText}</div>
+        <div class="favorite-card-button">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon-header" stroke="#000" width="24" height="24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-labelledby="favouriteIconTitle" color="#000" viewBox="0 0 24 24">
+            <path d="m12 21-1.45-1.3C5.4 15.13 2 12.1 2 8.4A5.4 5.4 0 0 1 7.5 3c1.74 0 3.41.8 4.5 2.05A6.04 6.04 0 0 1 16.5 3 5.4 5.4 0 0 1 22 8.4c0 3.7-3.4 6.72-8.55 11.31L12 21Z"></path>
+          </svg>
+        </div>
         <a class="ajax-link" href="/public/productcard.html">
-          <div class="shopping_card-image">
+          <div class="shopping_card-image fix-card">
             <img
               class="card_image main-image"
-              src="${productInfo.mainImages[0]}"
+              src="${productInfo.mainImages['default'][0]}"
               alt="Карточка товара"
             />
             <img
               class="card_image hover-image"
-              src="${productInfo.mainImages[1]}"
+              src="${productInfo.mainImages['default'][1]}"
               alt="Карточка товара"
             />
           </div>
@@ -25,91 +38,13 @@ export function createShoppingCard(item, index) {
         </div>
       </div>
       <div class="shopping_card-info">
-        <a href="/public/productcard.html" class="shopping_card-description ajax-link">${productInfo.title}</a>
         <div class="card-price">${item.price} ₽</div>
+        <a href="/public/productcard.html" class="shopping_card-description ajax-link">${productInfo.title}</a>
+        <div class="color-label">${colorLabel}</div>
+        <div class="color-options">
+          ${colorOptions}
+        </div>
       </div>
     </div>
   `;
 }
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  console.log("DOM fully loaded and parsed");
-
-  const observeDOM = (function(){
-    const MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-
-    return function(obj, callback){
-      if (!obj || obj.nodeType !== 1) return;
-
-      if (MutationObserver){
-        // define a new observer
-        const mutationObserver = new MutationObserver(callback);
-
-        // have the observer observe foo for changes in children
-        mutationObserver.observe(obj, { childList: true, subtree: true });
-        return mutationObserver;
-      }
-      // browser support fallback
-      else if (window.addEventListener){
-        obj.addEventListener('DOMNodeInserted', callback, false);
-        obj.addEventListener('DOMNodeRemoved', callback, false);
-      }
-    };
-  })();
-
-  // Добавляем наблюдателя за изменениями в контейнере с карточками товаров
-  const shoppingCardsContainer = document.getElementById('shopping-cards-container');
-  observeDOM(shoppingCardsContainer, function() {
-    console.log("Detected changes in the shopping cards container");
-    attachCardEventListeners();
-  });
-
-  function attachCardEventListeners() {
-    const fastViewButtons = document.querySelectorAll('.fast_view-button');
-    fastViewButtons.forEach(button => {
-      button.addEventListener('click', function(event) {
-        event.stopPropagation(); // Останавливаем всплытие события
-        const modalFastView = document.getElementById('modalFastView');
-        const itemIndex = this.getAttribute('data-index');
-        if (!modalFastView) {
-          console.error('Element with ID "modalFastView" not found');
-          return;
-        }
-        console.log(`Fast view button clicked for item with index: ${itemIndex}`);
-        // Заполните данные модального окна здесь на основе itemIndex
-        modalFastView.classList.add('open-fastview');
-      });
-    });
-
-    const shoppingCardImages = document.querySelectorAll('.shopping_card-item');
-    shoppingCardImages.forEach(image => {
-      image.addEventListener('mouseenter', function() {
-        const fastViewContainer = this.querySelector('.fast_view-container-button');
-        if (fastViewContainer) {
-          fastViewContainer.classList.remove('fast-view-hidden');
-          fastViewContainer.classList.add('fast-view-open');
-          console.log('Fast view container added');
-        } else {
-          console.error('No element found with class ".fast_view-container-button" inside .shopping_card-item');
-        }
-      });
-
-      image.addEventListener('mouseleave', function() {
-        const fastViewContainer = this.querySelector('.fast_view-container-button');
-        if (fastViewContainer) {
-          fastViewContainer.classList.remove('fast-view-open');
-          fastViewContainer.classList.add('fast-view-hidden');
-          console.log('Fast view container removed');
-        } else {
-          console.error('No element found with class ".fast_view-container-button" inside .shopping_card-item');
-        }
-      });
-    });
-  }
-
-  // Инициализация наблюдателя
-  observeDOM(shoppingCardsContainer, function() {
-    console.log("Detected changes in the shopping cards container");
-  });
-});

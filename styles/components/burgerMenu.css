@@ -1,0 +1,108 @@
+.burger-menu-container {
+    display: none; /* Скрываем по умолчанию */
+}
+
+.burger-menu-button {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .burger-menu-container {
+        z-index: 5;
+        display: block; /* Показываем на мобильной версии */
+    }
+
+    .burger-menu-button {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-block: 1px;
+        padding-inline: 6px;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        position: relative;
+        left: 10px;
+        z-index: 6;
+    }
+
+    .burger-menu-icon,
+    .burger-menu-icon::before,
+    .burger-menu-icon::after {
+        content: '';
+        width: 25px;
+        height: 3px;
+        background-color: black; /* Черные линии */
+        display: block;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .burger-menu-icon::before {
+        transform: translateY(-8px);
+    }
+    
+    .burger-menu-icon::after {
+        transform: translateY(5px);
+    }
+    
+    .burger-menu-button.open .burger-menu-icon {
+        transform: rotate(45deg);
+    }
+    
+    .burger-menu-button.open .burger-menu-icon::before {
+        transform: rotate(90deg) translateX(-10px);
+        visibility: hidden;
+    }
+    
+    .burger-menu-button.open .burger-menu-icon::after {
+        transform: rotate(90deg) translateX(-4px);
+    }
+
+    .burger-menu, .catalog-mobile-data-burger {
+        position: fixed;
+        top: 10%;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        padding: 25px 0;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%);
+    }
+
+    .burger-menu.open, .catalog-mobile-data-burger.open {
+        display: block;
+        transform: translateX(0);
+        position: fixed;
+        z-index: 4;
+    }
+
+    .burger-menu-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        height: 80%;
+        overflow: scroll;
+        background-color: #f4f4f4;
+    }
+
+    .burger-menu-list li {
+        border: 1px solid #e8e7e8;
+        padding: 15px;
+    }
+
+    .burger-menu-list a {
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+    }
+
+    .phone-and-socials-burger {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+

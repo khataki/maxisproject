@@ -13,10 +13,14 @@
 @import url('slider.css');
 @import url('productpage.css');
 @import url('style.css');
-@import url('svg.css');
 @import url('userinterface.css');
 @import url('components/cardComponent.css');
 @import url('components/cartComponent.css');
-@import url('components/fastViewComponent.css');
-@import url('media.css');
 @import url('./components/reviewComponent.css');
+@import url('./components/scrollToTop.css');
+@import url("./contactPage.css");
+@import url("./сartPage.css");
+@import url("./components/burgerMenu.css");
+@import url("./components/catalogmobile.css");
+@import url('./media.css');
+@import url("./fixes.css");
