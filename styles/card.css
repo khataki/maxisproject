@@ -226,6 +226,7 @@
   grid-column-gap: 0px;
   grid-row-gap: 25px;
   max-width: 1440px;
+  justify-items: center;
 }
 
 .unique-category-card {

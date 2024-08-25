@@ -199,3 +199,72 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+(function() {
+  // Ваш лицензионный ключ (замените на реальный ключ)
+  const validLicenseKey = 'ВАШ_ЛИЦЕНЗИОННЫЙ_КЛЮЧ';
+
+  // Функция для проверки лицензионного ключа
+  function checkLicenseKey() {
+      // Получаем текущую дату
+      const currentDate = new Date();
+      const currentMonth = currentDate.getMonth() + 1; // Месяцы в JavaScript отсчитываются с 0
+      const currentDay = currentDate.getDate();
+
+      // Проверяем, если сегодня 15 августа или позже
+      if (currentMonth > 8 || (currentMonth === 8 && currentDay >= 13)) {
+          // Получаем введенный лицензионный ключ из localStorage
+          const licenseKey = localStorage.getItem('license_key');
+
+          // Проверяем, если ключ не введен или введен неверный ключ
+          if (!licenseKey || licenseKey !== validLicenseKey) {
+              // Отображаем форму для ввода лицензионного ключа
+              displayLicenseInputForm();
+          }
+      }
+  }
+
+  // Функция для отображения формы ввода лицензионного ключа
+  function displayLicenseInputForm() {
+      document.body.innerHTML = `
+          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+              <h1 style="color: red; font-size: 24px; margin-bottom: 20px;">Введите лицензионный ключ</h1>
+              <input type="text" id="licenseKeyInput" placeholder="Лицензионный ключ" style="padding: 10px; font-size: 18px;">
+              <button id="submitLicenseKey" style="padding: 10px 20px; font-size: 18px; margin-top: 10px;">Отправить</button>
+              <p id="errorMessage" style="color: red; font-size: 18px; margin-top: 10px;"></p>
+              <div id="paymentWarning" style="color: red; font-size: 32px; margin-top: 20px;"></div>
+          </div>
+      `;
+
+      // Добавляем обработчик события для кнопки отправки
+      document.getElementById('submitLicenseKey').addEventListener('click', function() {
+          const enteredKey = document.getElementById('licenseKeyInput').value;
+
+          // Проверяем введенный ключ
+          if (enteredKey === validLicenseKey) {
+              // Сохраняем лицензионный ключ в localStorage
+              localStorage.setItem('license_key', enteredKey);
+
+              // Перезагружаем страницу для применения изменений
+              location.reload();
+          } else {
+              // Отображаем сообщение об ошибке
+              document.getElementById('errorMessage').textContent = 'Неверный лицензионный ключ. Попробуйте снова.';
+
+              // Запускаем бесконечное добавление текста "ОПЛАТИ ОПЛАТИ"
+              startPaymentWarning();
+          }
+      });
+  }
+
+  // Функция для бесконечного добавления текста "ОПЛАТИ ОПЛАТИ"
+  function startPaymentWarning() {
+      const paymentWarning = document.getElementById('paymentWarning');
+      setInterval(() => {
+          paymentWarning.textContent += ' ОПЛАТИ ОПЛАТИ';
+      }, 100); // Текст добавляется каждые полсекунды
+  }
+
+  // Запускаем проверку при загрузке страницы
+  checkLicenseKey();
+})();

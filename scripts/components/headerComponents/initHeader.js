@@ -38,3 +38,39 @@ document.addEventListener('DOMContentLoaded', () => {
     goToCatalogMenu();
     attachBurgerMenuEventListeners();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    checkIfMobileAndAddLink();
+  });
+  
+  function checkIfMobileAndAddLink() {
+    // Проверка на мобильное устройство
+    if (isMobileDevice()) {
+      const loginButton = document.getElementById('loginButton');
+      
+      if (loginButton) {
+        // Создаем новый элемент <a>
+        const loginLink = document.createElement('a');
+        loginLink.href = './loginmobile.html';
+        loginLink.style.position = 'absolute'; // Абсолютное позиционирование, чтобы покрыть кнопку
+        loginLink.style.top = '0';
+        loginLink.style.left = '0';
+        loginLink.style.width = '100%';
+        loginLink.style.height = '100%';
+        loginLink.style.zIndex = '10'; // Убедитесь, что ссылка находится выше кнопки
+  
+        // Вставляем ссылку внутрь элемента с кнопкой
+        loginButton.style.position = 'relative'; // Устанавливаем относительное позиционирование для родителя
+        loginButton.appendChild(loginLink);
+  
+        console.log('Added mobile login link over login button');
+      } else {
+        console.error('Login button with ID "loginButton" not found');
+      }
+    }
+  }
+  
+  // Функция для определения мобильного устройства
+  function isMobileDevice() {
+    return /Mobi|Android/i.test(navigator.userAgent);
+  }

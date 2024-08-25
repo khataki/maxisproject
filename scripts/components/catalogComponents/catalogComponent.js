@@ -20,11 +20,55 @@ export function createCatalogSection(containerId) {
 
   console.log('Items to be added:', items);
 
+  // Генерация и добавление карточек в контейнер
   catalogContainer.innerHTML = items.map((item, index) => createShoppingCard(item, index)).join('');
 
   console.log('Cards added to container');
 
+  // Удаляем класс fix-card для всех карточек внутри cards__container
+  removeFixCardClassInContainer();
+
+  // Добавляем класс fix-padding ко всем элементам shopping_card-info внутри каталога
+  addFixPaddingToCardInfo();
+
+  // Добавляем обработчики событий
   attachCardEventListeners();
+}
+
+function removeFixCardClassInContainer() {
+  const container = document.getElementById('cards__container');
+  if (!container) {
+    console.error('Container with ID "cards__container" not found');
+    return;
+  }
+
+  // Удаление класса fix-card у всех элементов .shopping_card-image
+  const cards = container.querySelectorAll('.shopping_card-item .shopping_card-image.fix-card');
+  cards.forEach(card => {
+    card.classList.remove('fix-card');
+    console.log('Removed fix-card from an item inside cards__container');
+  });
+
+  // Удаление всех элементов <div class="popup-visual popup-undefined">undefined</div>
+  const popups = container.querySelectorAll('.popup-visual.popup-undefined');
+  popups.forEach(popup => {
+    popup.remove();
+    console.log('Removed an undefined popup inside cards__container');
+  });
+}
+
+function addFixPaddingToCardInfo() {
+  const container = document.getElementById('cards__container');
+  if (!container) {
+    console.error('Container with ID "cards__container" not found');
+    return;
+  }
+
+  const cardInfos = container.querySelectorAll('.shopping_card-item .shopping_card-info');
+  cardInfos.forEach(info => {
+    info.classList.add('fix-padding');
+    console.log('Added fix-padding to an item inside cards__container');
+  });
 }
 
 function attachCardEventListeners() {

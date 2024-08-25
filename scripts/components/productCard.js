@@ -1,1 +1,348 @@
-const _0xd24d5a=_0x3852;(function(_0x1f1b30,_0x509162){const _0x5a15f4=_0x3852,_0x50db32=_0x1f1b30();while(!![]){try{const _0xf830d1=parseInt(_0x5a15f4(0xce))/0x1+-parseInt(_0x5a15f4(0x79))/0x2*(parseInt(_0x5a15f4(0xb2))/0x3)+parseInt(_0x5a15f4(0xb9))/0x4*(parseInt(_0x5a15f4(0x75))/0x5)+-parseInt(_0x5a15f4(0xb4))/0x6+-parseInt(_0x5a15f4(0xa0))/0x7*(parseInt(_0x5a15f4(0x72))/0x8)+-parseInt(_0x5a15f4(0x9e))/0x9+-parseInt(_0x5a15f4(0x73))/0xa;if(_0xf830d1===_0x509162)break;else _0x50db32['push'](_0x50db32['shift']());}catch(_0x23706e){_0x50db32['push'](_0x50db32['shift']());}}}(_0x421b,0x8d490));import{createTabs,attachTabsEventListeners}from'./tabsComponent.js';import{createCharacteristicsTable}from'./characteristicsComponent.js';function _0x3852(_0x2c2960,_0x2476eb){const _0x421b92=_0x421b();return _0x3852=function(_0x385251,_0x20d29e){_0x385251=_0x385251-0x6c;let _0x4c0b8e=_0x421b92[_0x385251];return _0x4c0b8e;},_0x3852(_0x2c2960,_0x2476eb);}import{createProductGrid}from'./productGridComponent.js';import{productInfo}from'./productInfo.js';function _0x421b(){const _0x431805=['productImagesContainer','brand','scrollLeft','availability','\x22\x20class=\x22main-img\x22\x20/>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','mainImages','add','smooth','624660NCANZE','Код\x20товара:\x20','2105910PXujvV','addToCartButton','\x22\x20class=\x22thumb-img\x22\x20/>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','scrollBy','.summary-quantity','13672bukNhJ','textContent','size','addToCart','.thumb-prev','summaryPriceElement','getAttribute','open','\x22\x20alt=\x22Thumbnail\x20','flat','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22scroll-arrow\x20thumb-prev\x22><i\x20class=\x22fa-solid\x20fa-chevron-up\x22></i></button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22thumbnail-container\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22thumbnail-images\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','Количество\x20изделий\x20на\x20один\x20модельный\x20ряд','values','indexOf','innerHTML','map','.characteristics','.main-img','prevButton','colors','.summary-price','1088173XNCOMI','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22','composition','appendChild','.tab-container','thumbnailImagesContainer','product-link-2.html','join','closest','scrollContainer','flatMap','imageModal','classList','1048DaWYCa','465310PtHbOA','offsetWidth','1555OttrlQ','productTitle','closeModalButton','.thumb-next','2PxqnFT','getElementById','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22scroll-arrow\x20thumb-next\x22><i\x20class=\x22fa-solid\x20fa-chevron-down\x22></i></button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','code','removeEventListener','.color-value','additionalImages','modalImage','.increment-color','quantity','characteristicsContainer','click','Не\x20удалось\x20найти\x20следующие\x20элементы\x20на\x20странице:','scroll','filter','Бренд','Материал','tabsContainer','.close-modal','productCode','.modal-content-productcard','data-index','productGridContainer','length','remove','Размеры','.next','src','querySelector','\x22\x20data-index=\x22','.delivery-info-container','.scroll-container','reduce','\x22\x20alt=\x22Main\x20Image\x20','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22main-img-container\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22image-container\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22','target','max','6162192SRlNGj','name','15071WklSYt','.add-to-cart-button','.thumbnail-container','.decrement-color','querySelectorAll','forEach','.increment','dispatchEvent','addEventListener','.image-container'];_0x421b=function(){return _0x431805;};return _0x421b();}import{items}from'./productItemComponent.js';import{createHoverCircle}from'./hoverCircleComponent.js';import{initZoom}from'./modalComponents/zoomComponent.js';import{createCitySelect,attachCitySelectEventListeners,createDeliveryInfo,updateDeliveryInfo}from'./cityDelivery.js';const relatedProducts=[{'imageSrc':'/images/related_example.jpeg','link':'product-link-1.html'},{'imageSrc':'/images/related_example.jpeg','link':_0xd24d5a(0xd4)}];document[_0xd24d5a(0xa8)]('DOMContentLoaded',function(){const _0x394e4d=_0xd24d5a,_0x51d6fe=document[_0x394e4d(0x7a)](_0x394e4d(0x76)),_0x19a869=document[_0x394e4d(0x7a)](_0x394e4d(0x8c)),_0x98f971=document[_0x394e4d(0x95)](_0x394e4d(0xd2)),_0x1face5=document[_0x394e4d(0x95)](_0x394e4d(0xc9)),_0x511a3b=document['querySelector']('.main-images'),_0x224924=document[_0x394e4d(0x95)]('.thumbnail-images'),_0x5d1401=document[_0x394e4d(0x7a)](_0x394e4d(0x80)),_0x26a7a4=document['getElementById'](_0x394e4d(0x70)),_0x1ee20d=document['querySelector'](_0x394e4d(0x8b)),_0x463e8d=document[_0x394e4d(0x95)]('.prev'),_0x5cd642=document[_0x394e4d(0x95)](_0x394e4d(0x93)),_0x2e781a=document['getElementById'](_0x394e4d(0x8f)),_0x3247ea=document['querySelector'](_0x394e4d(0xa1)),_0xc8ba5b=document[_0x394e4d(0x95)](_0x394e4d(0xb8)),_0x5609d6=document[_0x394e4d(0x95)](_0x394e4d(0xcd)),_0x36d4e8=document[_0x394e4d(0x95)](_0x394e4d(0x98)),_0x395fd0=document[_0x394e4d(0x95)](_0x394e4d(0x97)),_0x3ccc39=[{'name':_0x394e4d(0x76),'element':_0x51d6fe},{'name':_0x394e4d(0x8c),'element':_0x19a869},{'name':_0x394e4d(0x8a),'element':_0x98f971},{'name':_0x394e4d(0x83),'element':_0x1face5},{'name':_0x394e4d(0xaa),'element':_0x511a3b},{'name':_0x394e4d(0xd3),'element':_0x224924},{'name':_0x394e4d(0x80),'element':_0x5d1401},{'name':'imageModal','element':_0x26a7a4},{'name':_0x394e4d(0x77),'element':_0x1ee20d},{'name':_0x394e4d(0xcb),'element':_0x463e8d},{'name':'nextButton','element':_0x5cd642},{'name':_0x394e4d(0x8f),'element':_0x2e781a},{'name':_0x394e4d(0xb5),'element':_0x3247ea},{'name':'summaryQuantityElement','element':_0xc8ba5b},{'name':_0x394e4d(0xbe),'element':_0x5609d6},{'name':_0x394e4d(0x6e),'element':_0x36d4e8},{'name':'deliveryInfoContainer','element':_0x395fd0}],_0x305975=_0x3ccc39[_0x394e4d(0x87)](_0x5250c4=>!_0x5250c4['element'])[_0x394e4d(0xc8)](_0x2fb014=>_0x2fb014[_0x394e4d(0x9f)]);if(_0x305975[_0x394e4d(0x90)]>0x0){console['error'](_0x394e4d(0x85),_0x305975[_0x394e4d(0x6c)](',\x20'));return;}_0x51d6fe[_0x394e4d(0xba)]=productInfo['title'],_0x19a869[_0x394e4d(0xba)]=_0x394e4d(0xb3)+productInfo[_0x394e4d(0x7c)],_0x98f971[_0x394e4d(0xc7)]=createTabs(),attachTabsEventListeners(),_0x1face5[_0x394e4d(0xc7)]=createCharacteristicsTable([{'label':_0x394e4d(0x88),'value':productInfo[_0x394e4d(0xab)]},{'label':_0x394e4d(0xc4),'value':items[_0x394e4d(0x90)]},{'label':_0x394e4d(0x89),'value':productInfo['material']},{'label':'Состав','value':productInfo[_0x394e4d(0xd0)]},{'label':_0x394e4d(0x92),'value':items[_0x394e4d(0xc8)](_0x35212f=>_0x35212f[_0x394e4d(0xbb)])[_0x394e4d(0x6c)](',\x20')},{'label':'Цвета','value':[...new Set(items[_0x394e4d(0x6f)](_0x1f6330=>_0x1f6330['colors']))][_0x394e4d(0x6c)](',\x20')}]),_0x395fd0['innerHTML']=createDeliveryInfo(),setTimeout(()=>{attachCitySelectEventListeners();},0x0);function _0x5c250d(){const _0x478f74=_0x394e4d,_0x575da8=Object[_0x478f74(0xc5)](productInfo[_0x478f74(0xaf)])[_0x478f74(0xc2)](),_0x3502dc=Object[_0x478f74(0xc5)](productInfo[_0x478f74(0x7f)])[_0x478f74(0xc2)]();_0x511a3b[_0x478f74(0xc7)]=_0x575da8[_0x478f74(0xc8)]((_0x1205e7,_0x3c54df)=>_0x478f74(0x9b)+_0x1205e7+'\x22\x20data-index=\x22'+_0x3c54df+_0x478f74(0x9a)+(_0x3c54df+0x1)+_0x478f74(0xae))[_0x478f74(0x6c)](''),_0x224924[_0x478f74(0xc7)]=_0x478f74(0xc3)+_0x3502dc[_0x478f74(0xc8)]((_0x578991,_0x204c29)=>_0x478f74(0xcf)+_0x578991+_0x478f74(0x96)+_0x204c29+_0x478f74(0xc1)+(_0x204c29+0x1)+_0x478f74(0xb6))[_0x478f74(0x6c)]('')+_0x478f74(0x7b);}function _0x55dfe8(){const _0x221e02=_0x394e4d,_0x5041ee=Object[_0x221e02(0xc5)](productInfo[_0x221e02(0xaf)])[_0x221e02(0xc2)](),_0x3cc339=Object[_0x221e02(0xc5)](productInfo['additionalImages'])['flat']();_0x511a3b[_0x221e02(0xc7)]=_0x5041ee['map']((_0x37a30f,_0x2f1f02)=>'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22main-img-container\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22image-container\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22'+_0x37a30f+_0x221e02(0x96)+_0x2f1f02+_0x221e02(0x9a)+(_0x2f1f02+0x1)+'\x22\x20class=\x22main-img\x22\x20/>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20')[_0x221e02(0x6c)](''),_0x224924[_0x221e02(0xc7)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22thumbnail-container\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22thumbnail-images\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x3cc339[_0x221e02(0xc8)]((_0x35b3a9,_0x59e804)=>_0x221e02(0xcf)+_0x35b3a9+_0x221e02(0x96)+_0x59e804+_0x221e02(0xc1)+(_0x59e804+0x1)+_0x221e02(0xb6))['join']('')+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20';}const _0xede9ef=window['innerWidth']<=0x300;_0xede9ef?_0x55dfe8():_0x5c250d();initZoom();let _0x379486=0x0;function _0x19733b(_0x8c5c0e){const _0xd73b94=_0x394e4d,_0x114704=Object[_0xd73b94(0xc5)](productInfo[_0xd73b94(0xaf)])[_0xd73b94(0xc2)]();_0x5d1401[_0xd73b94(0x94)]=_0x114704[_0x8c5c0e],_0x379486=_0x8c5c0e;}document[_0x394e4d(0xa4)](_0x394e4d(0xca))[_0x394e4d(0xa5)](_0x229a17=>{const _0x4aba20=_0x394e4d;_0x229a17[_0x4aba20(0xa8)]('click',function(){const _0x59a7a5=_0x4aba20;_0x19733b(this[_0x59a7a5(0xbf)](_0x59a7a5(0x8e))),_0x26a7a4[_0x59a7a5(0x71)][_0x59a7a5(0xb0)](_0x59a7a5(0xc0));});}),document[_0x394e4d(0xa4)]('.thumb-img')[_0x394e4d(0xa5)](_0x32537a=>{const _0x115002=_0x394e4d;_0x32537a[_0x115002(0xa8)]('click',function(){const _0x14889b=_0x115002;_0x19733b(this[_0x14889b(0xbf)](_0x14889b(0x8e))),_0x26a7a4['classList'][_0x14889b(0xb0)](_0x14889b(0xc0));});}),_0x1ee20d[_0x394e4d(0xa8)]('click',function(){const _0x5b7b8b=_0x394e4d;_0x26a7a4['classList'][_0x5b7b8b(0x91)](_0x5b7b8b(0xc0));}),_0x463e8d[_0x394e4d(0xa8)](_0x394e4d(0x84),function(){const _0x2552bb=_0x394e4d,_0x307b91=Object['values'](productInfo['mainImages'])[_0x2552bb(0xc2)]();_0x379486=_0x379486===0x0?_0x307b91[_0x2552bb(0x90)]-0x1:_0x379486-0x1,_0x19733b(_0x379486);}),_0x5cd642['addEventListener'](_0x394e4d(0x84),function(){const _0x3a7167=_0x394e4d,_0x519d0c=Object[_0x3a7167(0xc5)](productInfo['mainImages'])['flat']();_0x379486=_0x379486===_0x519d0c[_0x3a7167(0x90)]-0x1?0x0:_0x379486+0x1,_0x19733b(_0x379486);}),window[_0x394e4d(0xa8)](_0x394e4d(0x84),function(_0x51d2d3){const _0x306601=_0x394e4d;_0x26a7a4['classList']['contains'](_0x306601(0xc0))&&!_0x51d2d3[_0x306601(0x9c)][_0x306601(0x6d)](_0x306601(0x8d))&&!_0x51d2d3['target'][_0x306601(0x6d)](_0x306601(0xca))&&!_0x51d2d3[_0x306601(0x9c)][_0x306601(0x6d)]('.thumb-img')&&_0x26a7a4[_0x306601(0x71)]['remove']('open');});const _0x1179ae=document['querySelectorAll'](_0x394e4d(0xa9));_0x1179ae[_0x394e4d(0xa5)]((_0x86a671,_0x520c18)=>{const _0x3e445c=_0x394e4d;if(relatedProducts[_0x520c18]){const _0x571ceb=createHoverCircle(relatedProducts[_0x520c18]['imageSrc'],relatedProducts[_0x520c18]['link']);_0x86a671[_0x3e445c(0xd1)](_0x571ceb);}});function _0x3f7a72(_0x15a9c5,_0x37422b,_0x308974){const _0x4cded3=_0x394e4d;document[_0x4cded3(0xa4)](_0x15a9c5)['forEach'](_0x4b5371=>{const _0x5b2ae7=_0x4cded3;_0x4b5371[_0x5b2ae7(0x7d)](_0x37422b,_0x308974);});}function _0x17be71(){const _0x402c4d=_0x394e4d;_0x2e781a[_0x402c4d(0xc7)]=createProductGrid(items),_0x5c70ac(),_0x385a03();}function _0x5c70ac(){const _0x17405c=_0x394e4d,_0x17d095=_0x2e781a[_0x17405c(0xa4)]('.decrement'),_0x11cfec=_0x2e781a[_0x17405c(0xa4)](_0x17405c(0xa6)),_0x28725a=_0x2e781a[_0x17405c(0xa4)](_0x17405c(0xa3)),_0x28953b=_0x2e781a[_0x17405c(0xa4)](_0x17405c(0x81));_0x17d095[_0x17405c(0xa5)](_0x56292e=>{const _0x43edab=_0x17405c;_0x56292e['addEventListener'](_0x43edab(0x84),_0x5ca0da);}),_0x11cfec[_0x17405c(0xa5)](_0x216eb1=>{const _0x34ee38=_0x17405c;_0x216eb1[_0x34ee38(0xa8)](_0x34ee38(0x84),_0x3783cb);}),_0x28725a[_0x17405c(0xa5)](_0x30193a=>{const _0x3bcdc4=_0x17405c;_0x30193a[_0x3bcdc4(0xa8)](_0x3bcdc4(0x84),_0x59a6fa);}),_0x28953b[_0x17405c(0xa5)](_0x10f234=>{_0x10f234['addEventListener']('click',_0x1406a3);});}function _0x5ca0da(_0x3df3c9){const _0xb9f488=_0x394e4d,_0x423253=parseInt(_0x3df3c9[_0xb9f488(0x9c)][_0xb9f488(0xbf)]('data-index'),0xa),_0x164482=items[_0x423253];_0x164482[_0xb9f488(0xad)]&&(_0x164482[_0xb9f488(0x82)]=Math[_0xb9f488(0x9d)](0x0,_0x164482['quantity']-0x1),_0x385a03(),_0x17be71());}function _0x3783cb(_0x419bb8){const _0x374836=_0x394e4d,_0x310703=parseInt(_0x419bb8['target'][_0x374836(0xbf)](_0x374836(0x8e)),0xa),_0x211d89=items[_0x310703];_0x211d89[_0x374836(0xad)]&&(_0x211d89['quantity']+=0x1,_0x385a03(),_0x17be71());}function _0x59a6fa(_0x5191be){const _0x2ae141=_0x394e4d,_0x2c08e4=parseInt(_0x5191be[_0x2ae141(0x9c)][_0x2ae141(0xbf)](_0x2ae141(0x8e)),0xa),_0x3d8227=items[_0x2c08e4],_0x5efc99=_0x3d8227[_0x2ae141(0xcc)]['indexOf'](_0x5191be[_0x2ae141(0x9c)]['closest'](_0x2ae141(0x7e))['textContent']),_0x153c01=_0x5efc99===0x0?_0x3d8227[_0x2ae141(0xcc)][_0x2ae141(0x90)]-0x1:_0x5efc99-0x1;_0x5191be[_0x2ae141(0x9c)][_0x2ae141(0x6d)](_0x2ae141(0x7e))['textContent']=_0x3d8227['colors'][_0x153c01];}function _0x1406a3(_0x34a9fd){const _0x10ef4e=_0x394e4d,_0x8ca899=parseInt(_0x34a9fd[_0x10ef4e(0x9c)][_0x10ef4e(0xbf)](_0x10ef4e(0x8e)),0xa),_0x202238=items[_0x8ca899],_0x2aeff3=_0x202238[_0x10ef4e(0xcc)][_0x10ef4e(0xc6)](_0x34a9fd[_0x10ef4e(0x9c)]['closest'](_0x10ef4e(0x7e))['textContent']),_0x26e095=_0x2aeff3===_0x202238[_0x10ef4e(0xcc)][_0x10ef4e(0x90)]-0x1?0x0:_0x2aeff3+0x1;_0x34a9fd[_0x10ef4e(0x9c)]['closest'](_0x10ef4e(0x7e))[_0x10ef4e(0xba)]=_0x202238[_0x10ef4e(0xcc)][_0x26e095];}function _0x385a03(){const _0x102ad5=_0x394e4d,_0x3548a9=items[_0x102ad5(0x99)]((_0x285b96,_0xf26124)=>_0x285b96+_0xf26124[_0x102ad5(0x82)],0x0),_0x4d1f08=items['reduce']((_0x2a1d08,_0x4f4ef8)=>_0x2a1d08+_0x4f4ef8[_0x102ad5(0x82)]*_0x4f4ef8['price'],0x0);_0xc8ba5b['textContent']=_0x3548a9+'\x20шт.',_0x5609d6['textContent']=_0x4d1f08+'Р.';}_0x3247ea[_0x394e4d(0xa8)](_0x394e4d(0x84),function(){items['forEach'](_0x278c61=>{const _0x599be5=_0x3852;if(_0x278c61[_0x599be5(0x82)]>0x0){const _0x855bb5=new CustomEvent(_0x599be5(0xbc),{'detail':{'item':{..._0x278c61,...productInfo}}});window[_0x599be5(0xa7)](_0x855bb5),_0x278c61[_0x599be5(0x82)]=0x0;}}),_0x385a03(),_0x17be71();});!_0xede9ef&&(document[_0x394e4d(0x95)](_0x394e4d(0xbd))[_0x394e4d(0xa8)]('click',function(){const _0x5c8945=_0x394e4d;_0x224924[_0x5c8945(0x95)](_0x5c8945(0xa2))[_0x5c8945(0xb7)]({'top':-0xc8,'behavior':_0x5c8945(0xb1)});}),document[_0x394e4d(0x95)](_0x394e4d(0x78))['addEventListener'](_0x394e4d(0x84),function(){const _0x36cee0=_0x394e4d;_0x224924[_0x36cee0(0x95)](_0x36cee0(0xa2))[_0x36cee0(0xb7)]({'top':0xc8,'behavior':'smooth'});}));_0x17be71();if(_0x36d4e8){let _0x43aa40;_0x36d4e8['addEventListener'](_0x394e4d(0x86),()=>{window['clearTimeout'](_0x43aa40),_0x43aa40=setTimeout(()=>{const _0x290ef2=_0x3852,_0x2f49ae=document[_0x290ef2(0xa4)]('.image-container'),_0x332e03=_0x2f49ae[0x0][_0x290ef2(0x74)],_0x486fd3=_0x36d4e8[_0x290ef2(0xac)],_0x2400e9=Math['round'](_0x486fd3/_0x332e03);_0x36d4e8['scrollTo']({'left':_0x2400e9*_0x332e03,'behavior':'smooth'});},0x64);});}});
+import { createTabs, attachTabsEventListeners } from './tabsComponent.js';
+import { createCharacteristicsTable } from './characteristicsComponent.js';
+import { createProductGrid } from './productGridComponent.js';
+import { productInfo } from './productInfo.js';
+import { items } from './productItemComponent.js';
+import { createHoverCircle } from './hoverCircleComponent.js';
+import { initZoom } from './modalComponents/zoomComponent.js'; // Импортируем зум компонент
+
+// Импортируем функции и данные из cityDelivery.js
+import { createCitySelect, attachCitySelectEventListeners, createDeliveryInfo, updateDeliveryInfo } from './cityDelivery.js';
+
+// Пример данных для связанных продуктов
+const relatedProducts = [
+    {
+        imageSrc: '/images/related_example.jpeg',
+        link: 'product-link-1.html'
+    },
+    {
+        imageSrc: '/images/related_example.jpeg',
+        link: 'product-link-2.html'
+    },
+    // Добавьте другие связанные продукты по необходимости
+];
+
+document.addEventListener('DOMContentLoaded', function() {
+    const productTitle = document.getElementById('productTitle');
+    const productCode = document.getElementById('productCode');
+    const tabsContainer = document.querySelector('.tab-container');
+    const characteristicsContainer = document.querySelector('.characteristics');
+    const productImagesContainer = document.querySelector('.main-images');
+    const thumbnailImagesContainer = document.querySelector('.thumbnail-images');
+    const modalImage = document.getElementById('modalImage');
+    const imageModal = document.getElementById('imageModal');
+    const closeModalButton = document.querySelector('.close-modal');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    const productGridContainer = document.getElementById('productGridContainer');
+    const addToCartButton = document.querySelector('.add-to-cart-button');
+    const summaryQuantityElement = document.querySelector('.summary-quantity');
+    const summaryPriceElement = document.querySelector('.summary-price');
+    const scrollContainer = document.querySelector('.scroll-container');
+    const deliveryInfoContainer = document.querySelector('.delivery-info-container');
+
+    const elements = [
+        { name: 'productTitle', element: productTitle },
+        { name: 'productCode', element: productCode },
+        { name: 'tabsContainer', element: tabsContainer },
+        { name: 'characteristicsContainer', element: characteristicsContainer },
+        { name: 'productImagesContainer', element: productImagesContainer },
+        { name: 'thumbnailImagesContainer', element: thumbnailImagesContainer },
+        { name: 'modalImage', element: modalImage },
+        { name: 'imageModal', element: imageModal },
+        { name: 'closeModalButton', element: closeModalButton },
+        { name: 'prevButton', element: prevButton },
+        { name: 'nextButton', element: nextButton },
+        { name: 'productGridContainer', element: productGridContainer },
+        { name: 'addToCartButton', element: addToCartButton },
+        { name: 'summaryQuantityElement', element: summaryQuantityElement },
+        { name: 'summaryPriceElement', element: summaryPriceElement },
+        { name: 'scrollContainer', element: scrollContainer },
+        { name: 'deliveryInfoContainer', element: deliveryInfoContainer }
+    ];
+
+    const missingElements = elements.filter(item => !item.element).map(item => item.name);
+
+    if (missingElements.length > 0) {
+        console.error('Не удалось найти следующие элементы на странице:', missingElements.join(', '));
+        return;
+    }
+
+    // Заполняем данные из productInfo
+    productTitle.textContent = productInfo.title;
+    productCode.textContent = `Код товара: ${productInfo.code}`;
+
+    // Рендерим табы и характеристики
+    tabsContainer.innerHTML = createTabs();
+    attachTabsEventListeners();
+
+    characteristicsContainer.innerHTML = createCharacteristicsTable([
+        { label: 'Бренд', value: productInfo.brand },
+        { label: 'Количество изделий на один модельный ряд', value: items.length },
+        { label: 'Материал', value: productInfo.material },
+        { label: 'Состав', value: productInfo.composition },
+        { label: 'Размеры', value: items.map(item => item.size).join(', ') },
+        { label: 'Цвета', value: [...new Set(items.flatMap(item => item.colors))].join(', ') }
+    ]);
+
+    // Рендеринг информации о доставке
+    deliveryInfoContainer.innerHTML = createDeliveryInfo();
+    setTimeout(() => {
+        attachCitySelectEventListeners(); // Прикрепляем обработчики событий
+    }, 0);
+
+    function renderDesktopImages() {
+        // Преобразуем mainImages и additionalImages в массивы для использования в компоненте
+        const mainImagesArray = Object.values(productInfo.mainImages).flat();
+        const additionalImagesArray = Object.values(productInfo.additionalImages).flat();
+
+        // Рендерим основные и эскизные изображения для десктопной версии
+        productImagesContainer.innerHTML = mainImagesArray.map((img, index) => `
+            <div class="main-img-container">
+                <div class="image-container">
+                    <img src="${img}" data-index="${index}" alt="Main Image ${index + 1}" class="main-img" />
+                </div>
+            </div>
+        `).join('');
+
+        thumbnailImagesContainer.innerHTML = `
+            <button class="scroll-arrow thumb-prev"><i class="fa-solid fa-chevron-up"></i></button>
+            <div class="thumbnail-container">
+                <div class="thumbnail-images">
+                    ${additionalImagesArray.map((img, index) => `
+                        <img src="${img}" data-index="${index}" alt="Thumbnail ${index + 1}" class="thumb-img" />
+                    `).join('')}
+                </div>
+            </div>
+            <button class="scroll-arrow thumb-next"><i class="fa-solid fa-chevron-down"></i></button>
+        `;
+    }
+
+    function renderMobileImages() {
+        // Преобразуем mainImages и additionalImages в массивы для использования в компоненте
+        const mainImagesArray = Object.values(productInfo.mainImages).flat();
+        const additionalImagesArray = Object.values(productInfo.additionalImages).flat();
+
+        // Рендерим основные и эскизные изображения для мобильной версии
+        productImagesContainer.innerHTML = mainImagesArray.map((img, index) => `
+            <div class="main-img-container">
+                <div class="image-container">
+                    <img src="${img}" data-index="${index}" alt="Main Image ${index + 1}" class="main-img" />
+                </div>
+            </div>
+        `).join('');
+
+        thumbnailImagesContainer.innerHTML = `
+            <div class="thumbnail-container">
+                <div class="thumbnail-images">
+                    ${additionalImagesArray.map((img, index) => `
+                        <img src="${img}" data-index="${index}" alt="Thumbnail ${index + 1}" class="thumb-img" />
+                    `).join('')}
+                </div>
+            </div>
+        `;
+    }
+
+    // Определяем устройство и рендерим соответствующую разметку
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) {
+        renderMobileImages();
+    } else {
+        renderDesktopImages();
+    }
+
+    // Обновляем зум для всех изображений
+    initZoom();
+
+    let currentImageIndex = 0;
+
+    function showImage(index) {
+        const mainImagesArray = Object.values(productInfo.mainImages).flat();
+        modalImage.src = mainImagesArray[index];
+        currentImageIndex = index;
+    }
+
+    // Обработчики событий для эскизов и основного изображения
+    document.querySelectorAll('.main-img').forEach(img => {
+        img.addEventListener('click', function() {
+            showImage(this.getAttribute('data-index'));
+            imageModal.classList.add('open');
+        });
+    });
+
+    document.querySelectorAll('.thumb-img').forEach(img => {
+        img.addEventListener('click', function() {
+            showImage(this.getAttribute('data-index'));
+            imageModal.classList.add('open');
+        });
+    });
+
+    // Закрытие модального окна
+    closeModalButton.addEventListener('click', function() {
+        imageModal.classList.remove('open');
+    });
+
+    // Перелистывание изображений
+    prevButton.addEventListener('click', function() {
+        const mainImagesArray = Object.values(productInfo.mainImages).flat();
+        currentImageIndex = (currentImageIndex === 0) ? mainImagesArray.length - 1 : currentImageIndex - 1;
+        showImage(currentImageIndex);
+    });
+
+    nextButton.addEventListener('click', function() {
+        const mainImagesArray = Object.values(productInfo.mainImages).flat();
+        currentImageIndex = (currentImageIndex === mainImagesArray.length - 1) ? 0 : currentImageIndex + 1;
+        showImage(currentImageIndex);
+    });
+
+    // Закрытие модального окна при клике вне изображения
+    window.addEventListener('click', function(event) {
+        if (imageModal.classList.contains('open') && !event.target.closest('.modal-content-productcard') && !event.target.closest('.main-img') && !event.target.closest('.thumb-img')) {
+            imageModal.classList.remove('open');
+        }
+    });
+
+    // Добавление hover circle к изображениям
+    const imageContainers = document.querySelectorAll('.image-container');
+    imageContainers.forEach((container, index) => {
+        if (relatedProducts[index]) {
+            const hoverCircle = createHoverCircle(relatedProducts[index].imageSrc, relatedProducts[index].link);
+            container.appendChild(hoverCircle);
+        }
+    });
+
+    // Функция для удаления обработчиков событий
+    function removeEventListeners(selectors, event, handler) {
+        document.querySelectorAll(selectors).forEach(element => {
+            element.removeEventListener(event, handler);
+        });
+    }
+
+    // Рендерим сетку товаров
+    function renderProductGrid() {
+        productGridContainer.innerHTML = createProductGrid(items);
+        attachGridEventListeners();
+        updateSummary();
+    }
+
+    function attachGridEventListeners() {
+        const decrementButtons = productGridContainer.querySelectorAll('.decrement');
+        const incrementButtons = productGridContainer.querySelectorAll('.increment');
+        const decrementColorButtons = productGridContainer.querySelectorAll('.decrement-color');
+        const incrementColorButtons = productGridContainer.querySelectorAll('.increment-color');
+
+        decrementButtons.forEach(button => {
+            button.addEventListener('click', handleDecrementClick);
+        });
+
+        incrementButtons.forEach(button => {
+            button.addEventListener('click', handleIncrementClick);
+        });
+
+        decrementColorButtons.forEach(button => {
+            button.addEventListener('click', handleDecrementColorClick);
+        });
+
+        incrementColorButtons.forEach(button => {
+            button.addEventListener('click', handleIncrementColorClick);
+        });
+    }
+
+    function handleDecrementClick(event) {
+        const index = parseInt(event.target.getAttribute('data-index'), 10);
+        const item = items[index];
+        if (item.availability) {
+            item.quantity = Math.max(0, item.quantity - 1);
+            updateSummary();
+            renderProductGrid(); // Перерисовываем сетку продуктов после изменения
+        }
+    }
+
+    function handleIncrementClick(event) {
+        const index = parseInt(event.target.getAttribute('data-index'), 10);
+        const item = items[index];
+        if (item.availability) {
+            item.quantity += 1;
+            updateSummary();
+            renderProductGrid(); // Перерисовываем сетку продуктов после изменения
+        }
+    }
+
+    function handleDecrementColorClick(event) {
+        const index = parseInt(event.target.getAttribute('data-index'), 10);
+        const item = items[index];
+        const currentColorIndex = item.colors.indexOf(event.target.closest('.color-value').textContent);
+        const newColorIndex = (currentColorIndex === 0) ? item.colors.length - 1 : currentColorIndex - 1;
+        event.target.closest('.color-value').textContent = item.colors[newColorIndex];
+    }
+
+    function handleIncrementColorClick(event) {
+        const index = parseInt(event.target.getAttribute('data-index'), 10);
+        const item = items[index];
+        const currentColorIndex = item.colors.indexOf(event.target.closest('.color-value').textContent);
+        const newColorIndex = (currentColorIndex === item.colors.length - 1) ? 0 : currentColorIndex + 1;
+        event.target.closest('.color-value').textContent = item.colors[newColorIndex];
+    }
+
+    // Обновление итогов корзины
+    function updateSummary() {
+        const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
+        const totalPrice = items.reduce((sum, item) => sum + (item.quantity * item.price), 0);
+
+        summaryQuantityElement.textContent = `${totalQuantity} шт.`;
+        summaryPriceElement.textContent = `${totalPrice}Р.`;
+    }
+
+    // Обработчик для кнопки "Добавить в корзину"
+    addToCartButton.addEventListener('click', function() {
+        items.forEach(item => {
+            if (item.quantity > 0) {
+                const event = new CustomEvent('addToCart', { detail: { item: { ...item, ...productInfo } } });
+                window.dispatchEvent(event);
+                item.quantity = 0;
+            }
+        });
+        updateSummary();
+        renderProductGrid();
+    });
+
+    // Обработчики событий для кнопок скролла, добавляются только на десктопной версии
+    if (!isMobile) {
+        document.querySelector('.thumb-prev').addEventListener('click', function() {
+            thumbnailImagesContainer.querySelector('.thumbnail-container').scrollBy({
+                top: -200,
+                behavior: 'smooth'
+            });
+        });
+
+        document.querySelector('.thumb-next').addEventListener('click', function() {
+            thumbnailImagesContainer.querySelector('.thumbnail-container').scrollBy({
+                top: 200,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    renderProductGrid();
+
+    // Горизонтальная прокрутка для изображений
+    if (scrollContainer) {
+        let isScrolling;
+
+        scrollContainer.addEventListener('scroll', () => {
+            window.clearTimeout(isScrolling);
+
+            isScrolling = setTimeout(() => {
+                const containers = document.querySelectorAll('.image-container');
+                const containerWidth = containers[0].offsetWidth;
+                const scrollLeft = scrollContainer.scrollLeft;
+                const index = Math.round(scrollLeft / containerWidth);
+
+                scrollContainer.scrollTo({
+                    left: index * containerWidth,
+                    behavior: 'smooth'
+                });
+            }, 100);
+        });
+    }
+});

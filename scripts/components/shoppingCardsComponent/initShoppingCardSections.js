@@ -1,6 +1,6 @@
 import { createShoppingCardSection } from './shoppingCardsSection.js';
-import { createShoppingCard } from '../сardComponent.js'; // Убедитесь, что имя файла правильное
-import { items } from '../productItemComponent.js'; // Убедитесь, что у вас есть items
+import { createShoppingCard } from '../сardComponent.js';
+import { items } from '../productItemComponent.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Initializing shopping card sections');
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { title: 'Распродажа', id: 'discounts', popupText: 'Распродажа' }
   ];
 
-  const mainContent = document.getElementById('main-content'); // Контейнер, куда будем добавлять секции
+  const mainContent = document.getElementById('main-content');
 
   if (!mainContent) {
     console.error('Element with ID "main-content" not found');
@@ -23,17 +23,16 @@ document.addEventListener('DOMContentLoaded', () => {
     mainContent.appendChild(shoppingCardSection);
     console.log(`Added section: ${section.title}`);
     
-    // Добавляем карточки товаров в соответствующую секцию
     const shoppingCardContainer = document.getElementById(`shoppingCardContainer-${section.id}`);
     if (shoppingCardContainer) {
-      shoppingCardContainer.innerHTML = items.map((item, index) => createShoppingCard(item, index, section.id, section.popupText)).join('');
+      const cardItemsHtml = items.map((item, index) => createShoppingCard(item, index, section.id, section.popupText)).join('');
+      shoppingCardContainer.innerHTML = cardItemsHtml;
       console.log(`Added items to section: ${section.title}`);
-      
-      if (window.innerWidth <= 768) { // Проверка ширины экрана для мобильной версии
+
+      if (window.innerWidth <= 768) {
         generateSliderRounds(section.id, items.length);
       }
-      
-      // Добавляем обработчики событий после добавления карточек
+
       attachCardEventListeners();
       addScrollEventListeners(section.id);
       addFixCardClass(section.id);
@@ -54,7 +53,6 @@ function attachCardEventListeners() {
         return;
       }
       console.log(`Fast view button clicked for item with index: ${itemIndex}`);
-      // Заполните данные модального окна здесь на основе itemIndex
       modalFastView.classList.add('open-fastview');
     });
   });
@@ -96,7 +94,7 @@ function generateSliderRounds(sectionId, itemCount) {
     const round = document.createElement('div');
     round.className = 'slider-round';
     round.dataset.index = i;
-    if (i === 0) round.classList.add('active'); // Первоначально активный круг
+    if (i === 0) round.classList.add('active');
     sliderRounds.appendChild(round);
   }
 }
@@ -116,12 +114,14 @@ function addScrollEventListeners(sectionId) {
 
   if (prevButton && nextButton && container) {
     prevButton.addEventListener('click', () => {
+      console.log(`Previous button clicked for section ${sectionId}`);
       currentIndex = (currentIndex - 1 + rounds.length) % rounds.length;
       updateSliderPosition(container, currentIndex);
       updateSliderRounds(rounds, currentIndex);
     });
 
     nextButton.addEventListener('click', () => {
+      console.log(`Next button clicked for section ${sectionId}`);
       currentIndex = (currentIndex + 1) % rounds.length;
       updateSliderPosition(container, currentIndex);
       updateSliderRounds(rounds, currentIndex);
@@ -133,7 +133,7 @@ function addScrollEventListeners(sectionId) {
       updateSliderRounds(rounds, currentIndex);
     });
   } else {
-    console.error(`Error adding scroll event listeners for section ${sectionId}`);
+    console.error(`Error adding scroll event listeners for section ${sectionId}: Buttons or container not found.`);
   }
 }
 
@@ -149,11 +149,24 @@ function addFixCardClass(sectionId) {
     console.error(`Container for section ${sectionId} not found`);
     return;
   }
+
   const cards = container.querySelectorAll('.shopping_card-item .shopping_card-image');
   cards.forEach(card => {
-    card.classList.add('fix-card');
+    // Проверяем, находится ли карточка внутри элемента с классом 'shopping_card-item',
+    // который находится внутри элемента с ID 'cards__container'
+    const parentItem = card.closest('.shopping_card-item');
+    const parentCardsContainer = parentItem.closest('#cards__container');
+    
+    if (!parentCardsContainer) {
+      card.classList.add('fix-card');
+      console.log(`Added fix-card to item in section ${sectionId}`);
+    } else {
+      console.log(`Skipped fix-card for item inside cards__container in section ${sectionId}`);
+    }
   });
 }
+
+
 
 function updateSliderRounds(rounds, index) {
   rounds.forEach((round, i) => {
